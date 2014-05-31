@@ -1,0 +1,6384 @@
+// converted by version 1.3
+// on Sun Jun 01 02:49:04 CST 2014
+
+.package hig/no {
+	.aid 0x20:0x14:0x6:0x1:0x0:0x1;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.2;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.2;		//javacardx/crypto
+	}
+
+	.applet {
+		0x20:0x14:0x6:0x1:0x0:0x0:0x1 SmartIDApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] CVCertificate/currentDate;
+		// 1
+		instanceFieldRef short[] CVCertificate/data;
+		// 2
+		instanceFieldRef 0.0[] CVCertificate/source;
+		// 3
+		instanceFieldRef byte[] CVCertificate/effectiveCertAuthorization;
+		// 4
+		instanceFieldRef byte[] CVCertificate/currentCertAuthorization;
+		// 5
+		instanceFieldRef byte[] CVCertificate/currentCertSubjectId;
+		// 6
+		instanceFieldRef 1.9 CVCertificate/currentCertPublicKey;
+		// 7
+		instanceFieldRef byte[] CVCertificate/currentCertEffDate;
+		// 8
+		instanceFieldRef byte[] CVCertificate/currentCertExpDate;
+		// 9
+		instanceFieldRef byte[] CVCertificate/currentCertNum;
+		// 10
+		instanceFieldRef 1.15 CVCertificate/signature;
+		// 11
+		instanceFieldRef byte[] CVCertificate/rootCertHolderReference;
+		// 12
+		instanceFieldRef byte[] CVCertificate/rootCertPublicKeyData;
+		// 13
+		instanceFieldRef byte[] CVCertificate/rootCertAuthorization;
+		// 14
+		instanceFieldRef byte[] CVCertificate/rootCertEffDate;
+		// 15
+		instanceFieldRef byte[] CVCertificate/rootCertExpDate;
+		// 16
+		instanceFieldRef byte[] CVCertificate/altCertHolderReference;
+		// 17
+		instanceFieldRef byte[] CVCertificate/altCertPublicKeyData;
+		// 18
+		instanceFieldRef byte[] CVCertificate/altCertAuthorization;
+		// 19
+		instanceFieldRef byte[] CVCertificate/altCertEffDate;
+		// 20
+		instanceFieldRef byte[] CVCertificate/altCertExpDate;
+		// 21
+		instanceFieldRef byte[] CVCertificate/comFile;
+		// 22
+		instanceFieldRef short CVCertificate/cvcaRootIndex;
+		// 23
+		instanceFieldRef short CVCertificate/cvcaAltIndex;
+		// 24
+		instanceFieldRef 0.0[] FileSystem/files;
+		// 25
+		instanceFieldRef short[] FileSystem/fileSizes;
+		// 26
+		instanceFieldRef byte[] FileSystem/filePerms;
+		// 27
+		instanceFieldRef byte[] FileSystem/currentAuthorization;
+		// 28
+		instanceFieldRef 1.10 KeyStore/sm_kEnc;
+		// 29
+		instanceFieldRef 1.10 KeyStore/sm_kMac;
+		// 30
+		instanceFieldRef 1.10 KeyStore/ma_kEnc;
+		// 31
+		instanceFieldRef 1.10 KeyStore/ma_kMac;
+		// 32
+		instanceFieldRef 1.8 KeyStore/rsaPrivateKey;
+		// 33
+		instanceFieldRef 1.9 KeyStore/rsaPublicKey;
+		// 34
+		instanceFieldRef 1.18 KeyStore/ecPrivateKey;
+		// 35
+		instanceFieldRef 1.19 KeyStore/ecPublicKey;
+		// 36
+		instanceFieldRef byte[] KeyStore/tmpKeys;
+		// 37
+		instanceFieldRef FileSystem SmartIDApplet/fileSystem;
+		// 38
+		instanceFieldRef 1.14 SmartIDApplet/randomData;
+		// 39
+		instanceFieldRef KeyStore SmartIDApplet/keyStore;
+		// 40
+		instanceFieldRef SmartIDCrypto SmartIDApplet/crypto;
+		// 41
+		instanceFieldRef byte[] SmartIDApplet/rnd;
+		// 42
+		instanceFieldRef byte[] SmartIDApplet/ssc;
+		// 43
+		instanceFieldRef byte[] SmartIDApplet/lastINS;
+		// 44
+		instanceFieldRef short[] SmartIDApplet/chainingOffset;
+		// 45
+		instanceFieldRef byte[] SmartIDApplet/chainingTmp;
+		// 46
+		instanceFieldRef byte[] SmartIDApplet/sicId;
+		// 47
+		instanceFieldRef 1.11 SmartIDCrypto/shaDigest;
+		// 48
+		instanceFieldRef 3.1 SmartIDCrypto/rsaCiph;
+		// 49
+		instanceFieldRef short SmartIDApplet/rndLength;
+		// 50
+		instanceFieldRef short SmartIDApplet/selectedFile;
+		// 51
+		instanceFieldRef KeyStore SmartIDCrypto/keyStore;
+		// 52
+		instanceFieldRef 1.15 SmartIDCrypto/sig;
+		// 53
+		instanceFieldRef 3.1 SmartIDCrypto/ciph;
+		// 54
+		instanceFieldRef 1.15 SmartIDCrypto/rsaSig;
+		// 55
+		instanceFieldRef 1.22 SmartIDCrypto/keyAgreement;
+		// 56
+		instanceFieldRef boolean[] SmartIDCrypto/eacChangeKeys;
+		// 57
+		staticFieldRef byte[] CVCertificate/AR_TERMINAL_OID;
+		// 58
+		virtualMethodRef CVCertificate/selectSubjectId([BSS)Z;
+		// 59
+		classRef 0.0;		// java/lang/Object
+		// 60
+		staticMethodRef 2.16.0([BS[BSS)B;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+		// 61
+		staticFieldRef short BERTLVScanner/tag;
+		// 62
+		staticFieldRef short BERTLVScanner/valueLength;
+		// 63
+		staticFieldRef short BERTLVScanner/valueOffset;
+		// 64
+		staticMethodRef FileSystem/getFileIndex(S)S;
+		// 65
+		virtualMethodRef FileSystem/getFile(S)[B;
+		// 66
+		virtualMethodRef FileSystem/getFileSize(S)S;
+		// 67
+		staticFieldRef CVCertificate SmartIDApplet/certificate;
+		// 68
+		virtualMethodRef CVCertificate/setCOMFileData([BSS)V;
+		// 69
+		staticMethodRef SmartIDApplet/isLocked()Z;
+		// 70
+		staticMethodRef SmartIDApplet/hasMutualAuthenticationKeys()Z;
+		// 71
+		staticFieldRef byte[] SmartIDApplet/volatileState;
+		// 72
+		staticMethodRef SmartIDApplet/hasTerminalAuthenticated()Z;
+		// 73
+		staticMethodRef 2.16.4([BS)S;		// javacard/framework/Util.getShort([BS)S
+		// 74
+		classRef 1.10;		// javacard/security/DESKey
+		// 75
+		staticMethodRef 1.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 76
+		staticMethodRef CVCertificate/setupCurrentKey([B[B[B[B[B)V;
+		// 77
+		classRef 1.9;		// javacard/security/RSAPublicKey
+		// 78
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 79
+		classRef 1.8;		// javacard/security/RSAPrivateKey
+		// 80
+		staticMethodRef 2.8.15(SB)[S;		// javacard/framework/JCSystem.makeTransientShortArray(SB)[S
+		// 81
+		staticFieldRef short BERTLVScanner/tagClass;
+		// 82
+		staticFieldRef byte KeyStore/CA_EC_KEYTYPE_PRIVATE;
+		// 83
+		staticFieldRef short KeyStore/CA_EC_KEYLENGTH;
+		// 84
+		classRef 1.18;		// javacard/security/ECPrivateKey
+		// 85
+		staticMethodRef 2.8.14(SB)[Ljava/lang/Object;;		// javacard/framework/JCSystem.makeTransientObjectArray(SB)[Ljava/lang/Object;
+			.descriptor	Ljava/lang/Object;	0.0;
+
+		// 86
+		staticFieldRef byte KeyStore/CA_EC_KEYTYPE_PUBLIC;
+		// 87
+		classRef 1.19;		// javacard/security/ECPublicKey
+		// 88
+		staticMethodRef 2.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 89
+		staticMethodRef CVCertificate/cleanArray([S)V;
+		// 90
+		staticMethodRef SmartIDApplet/hasMutuallyAuthenticated()Z;
+		// 91
+		staticMethodRef 2.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 92
+		classRef FileSystem;
+		// 93
+		staticMethodRef FileSystem/<init>()V;
+		// 94
+		staticMethodRef 2.16.3([BSSB)S;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+		// 95
+		staticMethodRef 1.14.0(B)Ljavacard/security/RandomData;;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+			.descriptor	Ljavacard/security/RandomData;	1.14;
+
+		// 96
+		virtualMethodRef 1.15.3(Ljavacard/security/Key;B)V;		// javacard/security/Signature.init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 97
+		classRef CVCertificate;
+		// 98
+		staticMethodRef CVCertificate/<init>()V;
+		// 99
+		classRef KeyStore;
+		// 100
+		staticMethodRef KeyStore/<init>()V;
+		// 101
+		virtualMethodRef 1.15.6([BSS)V;		// javacard/security/Signature.update([BSS)V
+		// 102
+		classRef SmartIDCrypto;
+		// 103
+		staticMethodRef SmartIDCrypto/<init>(Lhig/no/KeyStore;)V;
+		// 104
+		virtualMethodRef 1.15.7([BSS[BSS)Z;		// javacard/security/Signature.verify([BSS[BSS)Z
+		// 105
+		staticMethodRef CVCertificate/compareDate([BS[BS)B;
+		// 106
+		staticMethodRef CVCertificate/setupCurrentKeyFromCurrentCertificate()V;
+		// 107
+		staticMethodRef 2.8.1()V;		// javacard/framework/JCSystem.beginTransaction()V
+		// 108
+		staticMethodRef 2.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 109
+		staticMethodRef CVCertificate/cleanArray([B)V;
+		// 110
+		classRef SmartIDApplet;
+		// 111
+		staticMethodRef SmartIDApplet/<init>()V;
+		// 112
+		virtualMethodRef 2.3.1()V;		// javacard/framework/Applet.register()V
+		// 113
+		classRef 2.5;		// javacard/framework/CardRuntimeException
+		// 114
+		virtualMethodRef 2.10.1()[B;		// javacard/framework/APDU.getBuffer()[B
+		// 115
+		virtualMethodRef 2.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+		// 116
+		virtualMethodRef SmartIDCrypto/unwrapCommandAPDU([BLjavacard/framework/APDU;)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 117
+		virtualMethodRef 2.5.1()S;		// javacard/framework/CardRuntimeException.getReason()S
+		// 118
+		staticMethodRef SmartIDApplet/setNoChallenged()V;
+		// 119
+		staticMethodRef SmartIDApplet/needLe(B)Z;
+		// 120
+		virtualMethodRef 2.10.7()S;		// javacard/framework/APDU.setOutgoing()S
+		// 121
+		staticMethodRef SmartIDApplet/processAPDU(Ljavacard/framework/APDU;BBZS)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 122
+		virtualMethodRef SmartIDCrypto/getApduBufferOffset(S)S;
+		// 123
+		virtualMethodRef SmartIDCrypto/wrapResponseAPDU([BLjavacard/framework/APDU;SSS)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 124
+		virtualMethodRef 2.10.11()B;		// javacard/framework/APDU.getCurrentState()B
+		// 125
+		virtualMethodRef 2.10.9(S)V;		// javacard/framework/APDU.setOutgoingLength(S)V
+		// 126
+		virtualMethodRef 2.10.4(SS)V;		// javacard/framework/APDU.sendBytes(SS)V
+		// 127
+		staticMethodRef SmartIDApplet/processGetChallenge(Ljavacard/framework/APDU;ZS)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 128
+		staticMethodRef SmartIDApplet/processMutualAuthenticate(Ljavacard/framework/APDU;Z)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 129
+		staticMethodRef SmartIDApplet/processInternalAuthenticate(Ljavacard/framework/APDU;Z)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 130
+		staticMethodRef SmartIDApplet/processPSO(Ljavacard/framework/APDU;)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 131
+		staticMethodRef SmartIDApplet/processMSE(Ljavacard/framework/APDU;Z)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 132
+		staticMethodRef SmartIDApplet/processSelectFile(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 133
+		staticMethodRef SmartIDApplet/processReadBinary(Ljavacard/framework/APDU;SZ)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 134
+		staticMethodRef SmartIDApplet/processUpdateBinary(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 135
+		staticMethodRef SmartIDApplet/processCreateFile(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 136
+		staticMethodRef SmartIDApplet/processPutData(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 137
+		staticMethodRef SmartIDApplet/hasEAPCertificate()Z;
+		// 138
+		staticMethodRef SmartIDApplet/hasSicId()Z;
+		// 139
+		staticMethodRef SmartIDApplet/hasChipAuthenticated()Z;
+		// 140
+		virtualMethodRef CVCertificate/subjectIdSelected()Z;
+		// 141
+		virtualMethodRef CVCertificate/selectRootHolderReference()V;
+		// 142
+		virtualMethodRef CVCertificate/parseCertificate([BSSZ)V;
+		// 143
+		virtualMethodRef CVCertificate/verify()Z;
+		// 144
+		staticMethodRef SmartIDApplet/hasEACKey()Z;
+		// 145
+		virtualMethodRef SmartIDCrypto/authenticateChip([BSS)Z;
+		// 146
+		staticFieldRef byte SmartIDApplet/persistentState;
+		// 147
+		virtualMethodRef 2.10.6()S;		// javacard/framework/APDU.setIncomingAndReceive()S
+		// 148
+		virtualMethodRef SmartIDCrypto/deriveKey([BSSBS)V;
+		// 149
+		virtualMethodRef KeyStore/setMutualAuthenticationKeys([BS[BS)V;
+		// 150
+		virtualMethodRef CVCertificate/setRootCertificate([B)V;
+		// 151
+		staticMethodRef 1.15.0(BZ)Ljavacard/security/Signature;;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+			.descriptor	Ljavacard/security/Signature;	1.15;
+
+		// 152
+		staticMethodRef SmartIDApplet/hasInternalAuthenticationKeys()Z;
+		// 153
+		staticFieldRef boolean BERTLVScanner/isPrimitive;
+		// 154
+		virtualMethodRef 1.11.1([BSS[BS)S;		// javacard/security/MessageDigest.doFinal([BSS[BS)S
+		// 155
+		virtualMethodRef 1.11.4()V;		// javacard/security/MessageDigest.reset()V
+		// 156
+		staticMethodRef 2.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 157
+		virtualMethodRef 3.1.3(Ljavacard/security/Key;B)V;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 158
+		virtualMethodRef 3.1.1([BSS[BS)S;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+		// 159
+		virtualMethodRef CVCertificate/getPublicKey()Ljavacard/security/RSAPublicKey;;
+			.descriptor	Ljavacard/security/RSAPublicKey;	1.9;
+
+		// 160
+		virtualMethodRef 1.14.1([BSS)V;		// javacard/security/RandomData.generateData([BSS)V
+		// 161
+		staticMethodRef 2.8.2()V;		// javacard/framework/JCSystem.commitTransaction()V
+		// 162
+		staticMethodRef SmartIDApplet/isChallenged()Z;
+		// 163
+		virtualMethodRef SmartIDCrypto/eapVerifySignature(Ljavacard/security/RSAPublicKey;[BS[B[BSS)Z;
+			.descriptor	Ljavacard/security/RSAPublicKey;	1.9;
+
+		// 164
+		virtualMethodRef CVCertificate/getAuthorization()[B;
+		// 165
+		virtualMethodRef SmartIDCrypto/initMac(B)V;
+		// 166
+		virtualMethodRef SmartIDCrypto/verifyMacFinal([BSS[BS)Z;
+		// 167
+		virtualMethodRef SmartIDCrypto/decryptInit()V;
+		// 168
+		virtualMethodRef SmartIDCrypto/decryptFinal([BSS[BS)S;
+		// 169
+		staticMethodRef SmartIDUtil/xor([BS[BS[BSS)V;
+		// 170
+		virtualMethodRef KeyStore/setSecureMessagingKeys([BS[BS)V;
+		// 171
+		staticMethodRef SmartIDCrypto/computeSSC([BS[BS[B)V;
+		// 172
+		staticMethodRef SmartIDUtil/swap([BSSS)V;
+		// 173
+		virtualMethodRef SmartIDCrypto/encryptInit()S;
+		// 174
+		virtualMethodRef SmartIDCrypto/encryptFinal([BSS[BS)S;
+		// 175
+		virtualMethodRef SmartIDCrypto/createMacFinal([BSS[BS)V;
+		// 176
+		virtualMethodRef CVCertificate/clear()V;
+		// 177
+		staticMethodRef SmartIDApplet/setNoFileSelected()V;
+		// 178
+		staticMethodRef 2.16.5(BB)S;		// javacard/framework/Util.makeShort(BB)S
+		// 179
+		staticMethodRef SmartIDApplet/hasFileSelected()Z;
+		// 180
+		staticMethodRef SmartIDUtil/min(SS)S;
+		// 181
+		virtualMethodRef FileSystem/writeData(SS[BSS)V;
+		// 182
+		virtualMethodRef 2.10.3(S)S;		// javacard/framework/APDU.receiveBytes(S)S
+		// 183
+		virtualMethodRef FileSystem/createFile(SSZ)V;
+		// 184
+		classRef 0.2;		// java/lang/Exception
+		// 185
+		staticMethodRef BERTLVScanner/readTag([BS)S;
+		// 186
+		staticMethodRef 3.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	3.1;
+
+		// 187
+		staticMethodRef 2.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 188
+		staticMethodRef 1.11.0(BZ)Ljavacard/security/MessageDigest;;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+		// 189
+		staticMethodRef BERTLVScanner/readLength([BS)S;
+		// 190
+		staticMethodRef 1.22.0(BZ)Ljavacard/security/KeyAgreement;;		// javacard/security/KeyAgreement.getInstance(BZ)Ljavacard/security/KeyAgreement;
+			.descriptor	Ljavacard/security/KeyAgreement;	1.22;
+
+		// 191
+		staticMethodRef BERTLVScanner/skipValue()S;
+		// 192
+		staticMethodRef 2.8.12(SB)[Z;		// javacard/framework/JCSystem.makeTransientBooleanArray(SB)[Z
+		// 193
+		staticFieldRef byte[] CVCertificate/RSA_SHA1_OID;
+		// 194
+		virtualMethodRef 1.15.5([BSS[BS)S;		// javacard/security/Signature.sign([BSS[BS)S
+		// 195
+		virtualMethodRef KeyStore/getCryptKey()Ljavacard/security/DESKey;;
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+		// 196
+		virtualMethodRef 3.1.5([BSS[BS)S;		// javacardx/crypto/Cipher.update([BSS[BS)S
+		// 197
+		virtualMethodRef SmartIDCrypto/encryptInit(B[BSS)S;
+		// 198
+		staticMethodRef SmartIDUtil/pad([BSS)S;
+		// 199
+		virtualMethodRef KeyStore/getMacKey()Ljavacard/security/DESKey;;
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+		// 200
+		staticMethodRef SmartIDCrypto/incrementSSC([B)V;
+		// 201
+		virtualMethodRef SmartIDCrypto/updateMac([BSS)V;
+		// 202
+		staticFieldRef byte[] SmartIDCrypto/PAD_DATA;
+		// 203
+		staticMethodRef SmartIDUtil/calcLcFromPaddedData([BSS)B;
+		// 204
+		staticMethodRef SmartIDUtil/lengthWithPadding(S)S;
+		// 205
+		staticMethodRef 2.16.6([BSS)S;		// javacard/framework/Util.setShort([BSS)S
+		// 206
+		staticFieldRef byte[] SmartIDCrypto/c;
+		// 207
+		staticMethodRef SmartIDUtil/evenBits(B)B;
+		// 208
+		staticMethodRef 1.12.1(S)V;		// javacard/security/CryptoException.throwIt(S)V
+		// 209
+		virtualMethodRef 1.22.1(Ljavacard/security/PrivateKey;)V;		// javacard/security/KeyAgreement.init(Ljavacard/security/PrivateKey;)V
+			.descriptor	Ljavacard/security/PrivateKey;	1.2;
+
+		// 210
+		virtualMethodRef 1.22.3([BSS[BS)S;		// javacard/security/KeyAgreement.generateSecret([BSS[BS)S
+		// 211
+		staticMethodRef SmartIDUtil/sign(S)S;
+	}
+
+	.class public BERTLVScanner 0 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			static final short UNIVERSAL_CLASS = 0;		// S
+			static final short APPLICATION_CLASS = 1;		// S
+			static final short CONTEXT_SPECIFIC_CLASS = 2;		// S
+			static final short PRIVATE_CLASS = 3;		// S
+			static short tag;		// S
+			static short tagClass;		// S
+			static boolean isPrimitive;		// Z
+			static short valueOffset;		// S
+			static short valueLength;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>()V {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 78;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method static readTag([BS)S {
+			.stack 3;
+			.locals 2;
+
+				L0:	sload_1;
+					sstore_2;
+					aload_0;
+					sload_2;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+					goto L2;
+				L1:	sinc 2 1;
+					aload_0;
+					sload_2;
+					baload;
+					sstore_3;
+				L2:	sload_3;
+					ifeq L1;
+				L3:	sload_3;
+					sspush 255;
+					if_scmpeq L1;
+				L4:	sload_3;
+					sspush 192;
+					sand;
+					slookupswitch L9 4 0 L5 64 L6 128 L7 192 L8;
+				L5:	sconst_0;
+					putstatic_s 81;		// short hig/no/BERTLVScanner.tagClass
+					goto L9;
+				L6:	sconst_1;
+					putstatic_s 81;		// short hig/no/BERTLVScanner.tagClass
+					goto L9;
+				L7:	sconst_2;
+					putstatic_s 81;		// short hig/no/BERTLVScanner.tagClass
+					goto L9;
+				L8:	sconst_3;
+					putstatic_s 81;		// short hig/no/BERTLVScanner.tagClass
+				L9:	sload_3;
+					bspush 32;
+					sand;
+					slookupswitch L12 2 0 L10 32 L11;
+				L10:	sconst_1;
+					putstatic_b 153;		// boolean hig/no/BERTLVScanner.isPrimitive
+					goto L12;
+				L11:	sconst_0;
+					putstatic_b 153;		// boolean hig/no/BERTLVScanner.isPrimitive
+				L12:	sload_3;
+					bspush 31;
+					sand;
+					stableswitch L17 31 31 L13;
+				L13:	sload_3;
+					putstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sinc 2 1;
+					aload_0;
+					sload_2;
+					baload;
+					sstore_3;
+					goto L15;
+				L14:	getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					bspush 8;
+					sshl;
+					putstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sload_3;
+					bspush 127;
+					sand;
+					sor;
+					putstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sinc 2 1;
+					aload_0;
+					sload_2;
+					baload;
+					sstore_3;
+				L15:	sload_3;
+					sspush 128;
+					sand;
+					sspush 128;
+					if_scmpeq L14;
+				L16:	getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					bspush 8;
+					sshl;
+					putstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sload_3;
+					bspush 127;
+					sand;
+					sor;
+					putstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					goto L18;
+				L17:	sload_3;
+					putstatic_s 61;		// short hig/no/BERTLVScanner.tag
+				L18:	sinc 2 1;
+					sload_2;
+					sreturn;
+		}
+
+		.method static readLength([BS)S {
+			.stack 2;
+			.locals 4;
+
+				L0:	sload_1;
+					sstore_2;
+					aload_0;
+					sload_1;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+					sload_3;
+					sspush 128;
+					sand;
+					ifne L2;
+				L1:	sload_3;
+					putstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					goto L5;
+				L2:	sload_3;
+					bspush 127;
+					sand;
+					sstore 4;
+					sconst_0;
+					putstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sconst_0;
+					sstore 5;
+					goto L4;
+				L3:	sinc 2 1;
+					aload_0;
+					sload_2;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					bspush 8;
+					sshl;
+					putstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sload_3;
+					sadd;
+					putstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sinc 5 1;
+				L4:	sload 5;
+					sload 4;
+					if_scmplt L3;
+				L5:	sload_2;
+					sconst_1;
+					sadd;
+					putstatic_s 63;		// short hig/no/BERTLVScanner.valueOffset
+					getstatic_s 63;		// short hig/no/BERTLVScanner.valueOffset
+					sreturn;
+		}
+
+		.method static skipValue()S {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_s 63;		// short hig/no/BERTLVScanner.valueOffset
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sadd;
+					sreturn;
+		}
+
+	}
+
+	.class public CVCertificate 1 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private short[] data 0;		// [S
+			private 0.0[] source 1;		// [Ljava/lang/Object;
+			private 1.9 currentCertPublicKey 2;		// Ljavacard/security/RSAPublicKey;
+			private byte[] effectiveCertAuthorization 3;		// [B
+			private byte[] currentCertAuthorization 4;		// [B
+			private byte[] currentCertSubjectId 5;		// [B
+			private byte[] currentCertEffDate 6;		// [B
+			private byte[] currentCertExpDate 7;		// [B
+			private byte[] currentDate 8;		// [B
+			private byte[] currentCertNum 9;		// [B
+			private byte[] rootCertHolderReference 10;		// [B
+			private byte[] rootCertPublicKeyData 11;		// [B
+			private byte[] rootCertAuthorization 12;		// [B
+			private byte[] rootCertEffDate 13;		// [B
+			private byte[] rootCertExpDate 14;		// [B
+			private byte[] altCertHolderReference 15;		// [B
+			private byte[] altCertPublicKeyData 16;		// [B
+			private byte[] altCertAuthorization 17;		// [B
+			private byte[] altCertEffDate 18;		// [B
+			private byte[] altCertExpDate 19;		// [B
+			private 1.15 signature 20;		// Ljavacard/security/Signature;
+			private byte[] comFile 21;		// [B
+			private short cvcaRootIndex 22;		// S
+			private short cvcaAltIndex 23;		// S
+			private static final short OFFSET_PUB_KEY_MODULUS_OFFSET = 0;		// S
+			private static final short OFFSET_PUB_KEY_MODULUS_LENGTH = 1;		// S
+			private static final short OFFSET_PUB_KEY_EXPONENT_OFFSET = 2;		// S
+			private static final short OFFSET_PUB_KEY_EXPONENT_LENGTH = 3;		// S
+			private static final short OFFSET_SUB_ID_OFFSET = 4;		// S
+			private static final short OFFSET_SUB_ID_LENGTH = 5;		// S
+			private static final short OFFSET_AUTHORIZATION_OFFSET = 6;		// S
+			private static final short OFFSET_EFF_DATE_OFFSET = 7;		// S
+			private static final short OFFSET_EXP_DATE_OFFSET = 8;		// S
+			private static final short OFFSET_SIGNATURE_OFFSET = 9;		// S
+			private static final short OFFSET_SIGNATURE_LENGTH = 10;		// S
+			private static final short OFFSET_BODY_LENGTH = 11;		// S
+			private static final short TAG_CERT_BODY = 32590;		// S
+			private static final short TAG_CERT_VERSION = 24361;		// S
+			private static final short TAG_AUTH_ID = 66;		// S
+			private static final short TAG_PUB_KEY = 32585;		// S
+			private static final short TAG_OID = 6;		// S
+			private static final short TAG_MODULUS = 129;		// S
+			private static final short TAG_EXPONENT = 130;		// S
+			private static final short TAG_SUBJECT_ID = 24352;		// S
+			private static final short TAG_SUBJECT_AUTH = 32588;		// S
+			private static final short TAG_AUTHORIZATION = 83;		// S
+			private static final short TAG_EFF_DATE = 24357;		// S
+			private static final short TAG_EXP_DATE = 24356;		// S
+			private static final short TAG_SIGNATURE = 24375;		// S
+			private static final byte AUTH_LEN_MASK = 15;		// B
+			private static final byte ENTITY_MASK = -16;		// B
+			private static final byte TRUST_ROOT = 32;		// B
+			private static final byte TRUST_TIME = 16;		// B
+			private static final byte[] RSA_SHA1_OID = {40,-127,-116,93,3,1,20};		// [B
+			private static final byte[] AR_TERMINAL_OID = {40,-127,-116,93,3,3,1};		// [B
+			private static final byte CERT_ROOT = 1;		// B
+			private static final byte CERT_ALT = 2;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+			selectSubjectId([BSS)Z;
+			clear()V;
+			verify()Z;
+			setRootCertificate([B)V;
+			parseCertificate([BSSZ)V;
+			subjectIdSelected()Z;
+			selectRootHolderReference()V;
+			getPublicKey()Ljavacard/security/RSAPublicKey;;
+			getAuthorization()[B;
+			setCOMFileData([BSS)V;
+		}
+
+		.method  <init>()V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 78;		// java/lang/Object.<init>()V
+					aload_0;
+					bspush 6;
+					newarray 11;
+					dup;
+					sconst_1;
+					bspush 9;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_1;
+					bastore;
+					putfield_a 0;		// reference hig/no/CVCertificate.currentDate
+					aload_0;
+					bspush 12;
+					sconst_2;
+					invokestatic 80;		// javacard/framework/JCSystem.makeTransientShortArray(SB)[S
+					putfield_a 1;		// reference hig/no/CVCertificate.data
+					aload_0;
+					sconst_1;
+					sconst_2;
+					invokestatic 85;		// javacard/framework/JCSystem.makeTransientObjectArray(SB)[Ljava/lang/Object;
+					putfield_a 2;		// reference hig/no/CVCertificate.source
+					aload_0;
+					sconst_4;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					aload_0;
+					sconst_4;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 4;		// reference hig/no/CVCertificate.currentCertAuthorization
+					aload_0;
+					bspush 17;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					aload_0;
+					sconst_4;
+					sspush 1024;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 77;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					putfield_a 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					aload_0;
+					bspush 6;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					aload_0;
+					bspush 6;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 8;		// reference hig/no/CVCertificate.currentCertExpDate
+					aload_0;
+					sconst_1;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 9;		// reference hig/no/CVCertificate.currentCertNum
+					aload_0;
+					bspush 10;
+					sconst_0;
+					invokestatic 151;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+					putfield_a 10;		// reference hig/no/CVCertificate.signature
+					return;
+		}
+
+		.method  selectSubjectId([BSS)Z 128 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					baload;
+					ifne L10;
+				L1:	getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					ifnull L5;
+				L2:	getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_0;
+					baload;
+					sload_3;
+					s2b;
+					if_scmpne L5;
+				L3:	getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_1;
+					aload_1;
+					sload_2;
+					sload_3;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifne L9;
+				L4:	aload_0;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					getfield_a_this 13;		// reference hig/no/CVCertificate.rootCertAuthorization
+					getfield_a_this 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					getfield_a_this 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					invokespecial 76;		// hig/no/CVCertificate.setupCurrentKey([B[B[B[B[B)V
+					getfield_a_this 9;		// reference hig/no/CVCertificate.currentCertNum
+					sconst_0;
+					sconst_1;
+					bastore;
+					sconst_1;
+					sreturn;
+				L5:	getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					ifnull L9;
+				L6:	getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					sconst_0;
+					baload;
+					sload_3;
+					s2b;
+					if_scmpne L9;
+				L7:	getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					sconst_1;
+					aload_1;
+					sload_2;
+					sload_3;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifne L9;
+				L8:	aload_0;
+					getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					getfield_a_this 17;		// reference hig/no/CVCertificate.altCertPublicKeyData
+					getfield_a_this 18;		// reference hig/no/CVCertificate.altCertAuthorization
+					getfield_a_this 19;		// reference hig/no/CVCertificate.altCertEffDate
+					getfield_a_this 20;		// reference hig/no/CVCertificate.altCertExpDate
+					invokespecial 76;		// hig/no/CVCertificate.setupCurrentKey([B[B[B[B[B)V
+					getfield_a_this 9;		// reference hig/no/CVCertificate.currentCertNum
+					sconst_0;
+					sconst_2;
+					bastore;
+					sconst_1;
+					sreturn;
+				L9:	sconst_0;
+					sreturn;
+				L10:	sload_3;
+					getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					baload;
+					if_scmpne L13;
+				L11:	getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_1;
+					aload_1;
+					sload_2;
+					sload_3;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifne L13;
+				L12:	sconst_1;
+					sreturn;
+				L13:	sconst_0;
+					sreturn;
+		}
+
+		.method private setupCurrentKey([B[B[B[B[B)V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sconst_0;
+					getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					aload_1;
+					arraylength;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_3;
+					sconst_0;
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					arraylength;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_3;
+					sconst_0;
+					getfield_a_this 4;		// reference hig/no/CVCertificate.currentCertAuthorization
+					sconst_0;
+					getfield_a_this 4;		// reference hig/no/CVCertificate.currentCertAuthorization
+					arraylength;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload 4;
+					sconst_0;
+					getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					bspush 6;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload 5;
+					sconst_0;
+					getfield_a_this 8;		// reference hig/no/CVCertificate.currentCertExpDate
+					sconst_0;
+					bspush 6;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					aload_2;
+					sconst_0;
+					sconst_3;
+					invokeinterface 4 77 6;		// javacard/security/RSAPublicKey
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					aload_2;
+					sconst_3;
+					sspush 128;
+					invokeinterface 4 77 7;		// javacard/security/RSAPublicKey
+					return;
+		}
+
+		.method private setupCurrentKeyFromCurrentCertificate()V {
+			.stack 6;
+			.locals 13;
+
+				L0:	getfield_a_this 2;		// reference hig/no/CVCertificate.source
+					sconst_0;
+					aaload;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_4;
+					saload;
+					sstore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_5;
+					saload;
+					sstore_3;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_2;
+					saload;
+					sstore 4;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_3;
+					saload;
+					sstore 5;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_0;
+					saload;
+					sstore 6;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_1;
+					saload;
+					sstore 7;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 6;
+					saload;
+					sstore 8;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 7;
+					saload;
+					sstore 9;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 8;
+					saload;
+					sstore 10;
+					aload_1;
+					sload_2;
+					getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_1;
+					sload_3;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					sload_3;
+					s2b;
+					bastore;
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					aload_1;
+					sload 4;
+					sload 5;
+					invokeinterface 4 77 6;		// javacard/security/RSAPublicKey
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					aload_1;
+					sload 6;
+					sload 7;
+					invokeinterface 4 77 7;		// javacard/security/RSAPublicKey
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					baload;
+					bspush 15;
+					sand;
+					sstore 11;
+					aload_1;
+					sload 8;
+					baload;
+					bspush 15;
+					sand;
+					sstore 12;
+					sload 11;
+					bspush 15;
+					if_scmpeq L5;
+				L1:	sload 12;
+					bspush 15;
+					if_scmpne L3;
+				L2:	sload 11;
+					sstore 12;
+					goto L5;
+				L3:	sload 11;
+					sconst_1;
+					ssub;
+					s2b;
+					sstore 11;
+					sload 11;
+					sload 12;
+					if_scmpge L5;
+				L4:	sload 11;
+					sstore 12;
+				L5:	getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					baload;
+					aload_1;
+					sload 8;
+					baload;
+					sand;
+					bspush -16;
+					sand;
+					sload 12;
+					sor;
+					bastore;
+					sconst_1;
+					sstore 13;
+					goto L7;
+				L6:	getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sload 13;
+					dup2;
+					baload;
+					aload_1;
+					sload 8;
+					sload 13;
+					sadd;
+					baload;
+					sand;
+					bastore;
+					sinc 13 1;
+				L7:	sload 13;
+					sconst_4;
+					if_scmplt L6;
+				L8:	aload_1;
+					sload 8;
+					getfield_a_this 4;		// reference hig/no/CVCertificate.currentCertAuthorization
+					sconst_0;
+					sconst_4;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sload 9;
+					getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					bspush 6;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sload 10;
+					getfield_a_this 8;		// reference hig/no/CVCertificate.currentCertExpDate
+					sconst_0;
+					bspush 6;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method  clear()V 129 {
+			.stack 4;
+			.locals 0;
+
+				L0:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					invokestatic 89;		// hig/no/CVCertificate.cleanArray([S)V
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					sconst_4;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 4;		// reference hig/no/CVCertificate.currentCertAuthorization
+					sconst_0;
+					sconst_4;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					bspush 17;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					bspush 6;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 8;		// reference hig/no/CVCertificate.currentCertExpDate
+					sconst_0;
+					bspush 6;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 9;		// reference hig/no/CVCertificate.currentCertNum
+					sconst_0;
+					sconst_1;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					invokeinterface 1 77 0;		// javacard/security/RSAPublicKey
+					getfield_a_this 2;		// reference hig/no/CVCertificate.source
+					sconst_0;
+					aconst_null;
+					aastore;
+					return;
+		}
+
+		.method  verify()Z 130 {
+			.stack 7;
+			.locals 11;
+
+				L0:	getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					baload;
+					bspush 15;
+					sand;
+					ifle L2;
+				L1:	sconst_1;
+					goto L3;
+				L2:	sconst_0;
+				L3:	sstore_1;
+					getfield_a_this 2;		// reference hig/no/CVCertificate.source
+					sconst_0;
+					aaload;
+					checkcast 11 0;		// T_BYTE
+					astore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 11;
+					saload;
+					sstore_3;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 9;
+					saload;
+					sstore 4;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 10;
+					saload;
+					sstore 5;
+					getfield_a_this 10;		// reference hig/no/CVCertificate.signature
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					sconst_2;
+					invokevirtual 96;		// javacard/security/Signature.init(Ljavacard/security/Key;B)V
+					getfield_a_this 10;		// reference hig/no/CVCertificate.signature
+					aload_2;
+					sconst_0;
+					sload_3;
+					invokevirtual 101;		// javacard/security/Signature.update([BSS)V
+					getfield_a_this 10;		// reference hig/no/CVCertificate.signature
+					aload_2;
+					sload_3;
+					sconst_0;
+					aload_2;
+					sload 4;
+					sload 5;
+					invokevirtual 104;		// javacard/security/Signature.verify([BSS[BSS)Z
+					ifeq L6;
+				L4:	sload_1;
+					ifeq L6;
+				L5:	sconst_1;
+					goto L7;
+				L6:	sconst_0;
+				L7:	sstore_1;
+					aload_0;
+					aload_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 8;
+					saload;
+					getfield_a_this 0;		// reference hig/no/CVCertificate.currentDate
+					sconst_0;
+					invokespecial 105;		// hig/no/CVCertificate.compareDate([BS[BS)B
+					ifle L10;
+				L8:	sload_1;
+					ifeq L10;
+				L9:	sconst_1;
+					goto L11;
+				L10:	sconst_0;
+				L11:	sstore_1;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_4;
+					saload;
+					sstore 6;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_5;
+					saload;
+					sstore 7;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					ifnull L14;
+				L12:	sload 7;
+					s2b;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_0;
+					baload;
+					if_scmpne L14;
+				L13:	getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_1;
+					aload_2;
+					sload 6;
+					sload 7;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifeq L17;
+				L14:	getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					ifnull L18;
+				L15:	sload 7;
+					s2b;
+					getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					sconst_0;
+					baload;
+					if_scmpne L18;
+				L16:	getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					sconst_1;
+					aload_2;
+					sload 6;
+					sload 7;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifne L18;
+				L17:	sconst_0;
+					sstore_1;
+				L18:	sload_1;
+					ifeq_w L62;
+				L19:	aload_0;
+					invokespecial 106;		// hig/no/CVCertificate.setupCurrentKeyFromCurrentCertificate()V
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					baload;
+					bspush 16;
+					sand;
+					bspush 16;
+					if_scmpne L21;
+				L20:	sconst_1;
+					goto L22;
+				L21:	sconst_0;
+				L22:	sstore 8;
+					sload 8;
+					ifeq L25;
+				L23:	aload_0;
+					getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					getfield_a_this 0;		// reference hig/no/CVCertificate.currentDate
+					sconst_0;
+					invokespecial 105;		// hig/no/CVCertificate.compareDate([BS[BS)B
+					ifle L25;
+				L24:	sconst_1;
+					goto L26;
+				L25:	sconst_0;
+				L26:	sstore 8;
+					getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					sconst_0;
+					baload;
+					bspush 32;
+					sand;
+					bspush 32;
+					if_scmpne L28;
+				L27:	sconst_1;
+					goto L29;
+				L28:	sconst_0;
+				L29:	sstore 9;
+					sload 9;
+					ifeq L32;
+				L30:	getfield_a_this 9;		// reference hig/no/CVCertificate.currentCertNum
+					sconst_0;
+					baload;
+					sconst_1;
+					if_scmpne L32;
+				L31:	sconst_1;
+					goto L33;
+				L32:	sconst_0;
+				L33:	sstore 9;
+					sload 9;
+					ifeq L36;
+				L34:	aload_0;
+					getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					getfield_a_this 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					sconst_0;
+					invokespecial 105;		// hig/no/CVCertificate.compareDate([BS[BS)B
+					ifle L36;
+				L35:	sconst_1;
+					goto L37;
+				L36:	sconst_0;
+				L37:	sstore 9;
+					aload_0;
+					getfield_a_this 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					sconst_0;
+					sload 8;
+					ifeq L39;
+				L38:	getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					goto L40;
+				L39:	getfield_a_this 0;		// reference hig/no/CVCertificate.currentDate
+				L40:	sconst_0;
+					invokespecial 105;		// hig/no/CVCertificate.compareDate([BS[BS)B
+					iflt L42;
+				L41:	sconst_1;
+					goto L43;
+				L42:	sconst_0;
+				L43:	sstore 10;
+					aload_0;
+					getfield_a_this 20;		// reference hig/no/CVCertificate.altCertExpDate
+					sconst_0;
+					sload 8;
+					ifeq L45;
+				L44:	getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					goto L46;
+				L45:	getfield_a_this 0;		// reference hig/no/CVCertificate.currentDate
+				L46:	sconst_0;
+					invokespecial 105;		// hig/no/CVCertificate.compareDate([BS[BS)B
+					ifge L48;
+				L47:	sconst_1;
+					goto L49;
+				L48:	sconst_0;
+				L49:	sstore 11;
+					sload 9;
+					ifne L51;
+				L50:	sload 8;
+					ifeq_w L60;
+				L51:	invokestatic 107;		// javacard/framework/JCSystem.beginTransaction()V
+					sload 9;
+					ifeq_w L57;
+				L52:	sload 10;
+					ifeq L54;
+				L53:	getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_0;
+					getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					sconst_0;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					sconst_0;
+					getfield_a_this 17;		// reference hig/no/CVCertificate.altCertPublicKeyData
+					sconst_0;
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					sconst_0;
+					getfield_a_this 19;		// reference hig/no/CVCertificate.altCertEffDate
+					sconst_0;
+					getfield_a_this 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					sconst_0;
+					getfield_a_this 20;		// reference hig/no/CVCertificate.altCertExpDate
+					sconst_0;
+					getfield_a_this 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 13;		// reference hig/no/CVCertificate.rootCertAuthorization
+					sconst_0;
+					getfield_a_this 18;		// reference hig/no/CVCertificate.altCertAuthorization
+					sconst_0;
+					getfield_a_this 13;		// reference hig/no/CVCertificate.rootCertAuthorization
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					goto L56;
+				L54:	sload 11;
+					ifeq L56;
+				L55:	getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					invokestatic 109;		// hig/no/CVCertificate.cleanArray([B)V
+					getfield_a_this 17;		// reference hig/no/CVCertificate.altCertPublicKeyData
+					invokestatic 109;		// hig/no/CVCertificate.cleanArray([B)V
+					getfield_a_this 19;		// reference hig/no/CVCertificate.altCertEffDate
+					invokestatic 109;		// hig/no/CVCertificate.cleanArray([B)V
+					getfield_a_this 20;		// reference hig/no/CVCertificate.altCertExpDate
+					invokestatic 109;		// hig/no/CVCertificate.cleanArray([B)V
+					getfield_a_this 18;		// reference hig/no/CVCertificate.altCertAuthorization
+					invokestatic 109;		// hig/no/CVCertificate.cleanArray([B)V
+				L56:	getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_0;
+					bspush 17;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 4;		// reference hig/no/CVCertificate.currentCertAuthorization
+					sconst_0;
+					getfield_a_this 13;		// reference hig/no/CVCertificate.rootCertAuthorization
+					sconst_0;
+					bspush 17;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					getfield_a_this 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					sconst_0;
+					bspush 6;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 8;		// reference hig/no/CVCertificate.currentCertExpDate
+					sconst_0;
+					getfield_a_this 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					sconst_0;
+					bspush 6;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_0;
+					getfield_a_this 21;		// reference hig/no/CVCertificate.comFile
+					getfield_s_this 22;		// short hig/no/CVCertificate.cvcaRootIndex
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					sconst_0;
+					getfield_a_this 21;		// reference hig/no/CVCertificate.comFile
+					getfield_s_this 23;		// short hig/no/CVCertificate.cvcaAltIndex
+					getfield_a_this 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					arraylength;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					sconst_0;
+					invokeinterface 3 77 4;		// javacard/security/RSAPublicKey
+					pop;
+					getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					sconst_3;
+					invokeinterface 3 77 5;		// javacard/security/RSAPublicKey
+					pop;
+				L57:	sload 8;
+					ifeq L59;
+				L58:	getfield_a_this 7;		// reference hig/no/CVCertificate.currentCertEffDate
+					sconst_0;
+					getfield_a_this 0;		// reference hig/no/CVCertificate.currentDate
+					sconst_0;
+					bspush 6;
+					invokestatic 108;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+				L59:	invokestatic 161;		// javacard/framework/JCSystem.commitTransaction()V
+				L60:	sload 9;
+					ifeq L63;
+				L61:	aload_0;
+					invokevirtual 176;		// hig/no/CVCertificate.clear()V
+					goto L63;
+				L62:	aload_0;
+					invokevirtual 176;		// hig/no/CVCertificate.clear()V
+				L63:	sload_1;
+					sreturn;
+		}
+
+		.method  setRootCertificate([B)V 131 {
+			.stack 5;
+			.locals 9;
+
+				L0:	getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					ifnull L2;
+				L1:	return;
+				L2:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_4;
+					saload;
+					sstore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_5;
+					saload;
+					sstore_3;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_2;
+					saload;
+					sstore 4;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_3;
+					saload;
+					sstore 5;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_0;
+					saload;
+					sstore 6;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_1;
+					saload;
+					sstore 7;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 6;
+					saload;
+					sstore 8;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 7;
+					saload;
+					sstore 9;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 8;
+					saload;
+					sstore 10;
+					aload_0;
+					bspush 17;
+					newarray 11;
+					putfield_a 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					aload_0;
+					bspush 17;
+					newarray 11;
+					putfield_a 16;		// reference hig/no/CVCertificate.altCertHolderReference
+					aload_1;
+					sload_2;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_1;
+					sload_3;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_0;
+					sload_3;
+					s2b;
+					bastore;
+					aload_0;
+					sload 5;
+					sload 7;
+					sadd;
+					newarray 11;
+					putfield_a 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					aload_0;
+					sload 5;
+					sload 7;
+					sadd;
+					newarray 11;
+					putfield_a 17;		// reference hig/no/CVCertificate.altCertPublicKeyData
+					aload_1;
+					sload 4;
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					sconst_0;
+					sload 5;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sload 6;
+					getfield_a_this 12;		// reference hig/no/CVCertificate.rootCertPublicKeyData
+					sload 5;
+					sload 7;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_0;
+					sconst_4;
+					newarray 11;
+					putfield_a 13;		// reference hig/no/CVCertificate.rootCertAuthorization
+					aload_0;
+					sconst_4;
+					newarray 11;
+					putfield_a 18;		// reference hig/no/CVCertificate.altCertAuthorization
+					aload_1;
+					sload 8;
+					getfield_a_this 13;		// reference hig/no/CVCertificate.rootCertAuthorization
+					sconst_0;
+					sconst_4;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_0;
+					bspush 6;
+					newarray 11;
+					putfield_a 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					aload_0;
+					bspush 6;
+					newarray 11;
+					putfield_a 19;		// reference hig/no/CVCertificate.altCertEffDate
+					aload_1;
+					sload 9;
+					getfield_a_this 14;		// reference hig/no/CVCertificate.rootCertEffDate
+					sconst_0;
+					bspush 6;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_0;
+					bspush 6;
+					newarray 11;
+					putfield_a 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					aload_0;
+					bspush 6;
+					newarray 11;
+					putfield_a 20;		// reference hig/no/CVCertificate.altCertExpDate
+					aload_1;
+					sload 10;
+					getfield_a_this 15;		// reference hig/no/CVCertificate.rootCertExpDate
+					sconst_0;
+					bspush 6;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_0;
+					invokevirtual 176;		// hig/no/CVCertificate.clear()V
+					return;
+		}
+
+		.method  parseCertificate([BSSZ)V 132 {
+			.stack 5;
+			.locals 1;
+
+				L0:	aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 32590;
+					if_scmpeq L2;
+				L1:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 24361;
+					if_scmpne L5;
+				L3:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sconst_1;
+					if_scmpne L5;
+				L4:	aload_1;
+					sload_2;
+					baload;
+					ifeq L6;
+				L5:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					bspush 66;
+					if_scmpeq L8;
+				L7:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					pop;
+					invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 32585;
+					if_scmpeq L10;
+				L9:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					bspush 6;
+					if_scmpne L13;
+				L11:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					bspush 7;
+					if_scmpne L13;
+				L12:	aload_1;
+					sload_2;
+					getstatic_a 193;		// reference hig/no/CVCertificate.RSA_SHA1_OID
+					sconst_0;
+					bspush 7;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifeq L14;
+				L13:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 129;
+					if_scmpeq L16;
+				L15:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_0;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_1;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sastore;
+					invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_0;
+					saload;
+					baload;
+					ifne L18;
+				L17:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_0;
+					dup2;
+					saload;
+					sconst_1;
+					sadd;
+					sastore;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_1;
+					dup2;
+					saload;
+					sconst_1;
+					ssub;
+					sastore;
+				L18:	aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 130;
+					if_scmpeq L20;
+				L19:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L20:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_2;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_3;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sastore;
+					invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_2;
+					saload;
+					baload;
+					ifne L22;
+				L21:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_2;
+					dup2;
+					saload;
+					sconst_1;
+					sadd;
+					sastore;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_3;
+					dup2;
+					saload;
+					sconst_1;
+					ssub;
+					sastore;
+				L22:	aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 24352;
+					if_scmpeq L24;
+				L23:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L24:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_4;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					sconst_5;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sastore;
+					invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 32588;
+					if_scmpne L26;
+				L25:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					bspush 15;
+					if_scmpeq L27;
+				L26:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L27:	aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					bspush 6;
+					if_scmpne L30;
+				L28:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					bspush 7;
+					if_scmpne L30;
+				L29:	aload_1;
+					sload_2;
+					getstatic_a 57;		// reference hig/no/CVCertificate.AR_TERMINAL_OID
+					sconst_0;
+					bspush 7;
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifeq L31;
+				L30:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L31:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 6;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					bspush 83;
+					if_scmpne L33;
+				L32:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sconst_4;
+					if_scmpeq L34;
+				L33:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L34:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 7;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 24357;
+					if_scmpne L36;
+				L35:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					bspush 6;
+					if_scmpeq L37;
+				L36:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L37:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 8;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 24356;
+					if_scmpne L39;
+				L38:	getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					bspush 6;
+					if_scmpeq L40;
+				L39:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L40:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_2;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 11;
+					sload_2;
+					sastore;
+					sload 4;
+					ifne L46;
+				L41:	aload_1;
+					sload_2;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_2;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					sspush 24375;
+					if_scmpeq L43;
+				L42:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L43:	getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 9;
+					aload_1;
+					sload_2;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sastore;
+					getfield_a_this 1;		// reference hig/no/CVCertificate.data
+					bspush 10;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sastore;
+					getfield_a_this 2;		// reference hig/no/CVCertificate.source
+					sconst_0;
+					aload_1;
+					aastore;
+				L44:	goto L46;
+				L45:	astore 5;
+					aload_0;
+					invokevirtual 176;		// hig/no/CVCertificate.clear()V
+					sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L46:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L0 L44 L45 184;
+			}
+		}
+
+		.method  subjectIdSelected()Z 133 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getfield_a_this 5;		// reference hig/no/CVCertificate.currentCertSubjectId
+					sconst_0;
+					baload;
+					ifeq L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method  selectRootHolderReference()V 134 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					sconst_1;
+					getfield_a_this 11;		// reference hig/no/CVCertificate.rootCertHolderReference
+					arraylength;
+					sconst_1;
+					ssub;
+					invokevirtual 58;		// hig/no/CVCertificate.selectSubjectId([BSS)Z
+					ifne L2;
+				L1:	sspush 28416;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	return;
+		}
+
+		.method  getPublicKey()Ljavacard/security/RSAPublicKey; 135 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljavacard/security/RSAPublicKey;	1.9;
+
+				L0:	getfield_a_this 6;		// reference hig/no/CVCertificate.currentCertPublicKey
+					areturn;
+		}
+
+		.method  getAuthorization()[B 136 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 3;		// reference hig/no/CVCertificate.effectiveCertAuthorization
+					areturn;
+		}
+
+		.method private compareDate([BS[BS)B {
+			.stack 4;
+			.locals 6;
+
+				L0:	aload_1;
+					sload_2;
+					baload;
+					bspush 10;
+					smul;
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					baload;
+					sadd;
+					sstore 5;
+					aload_3;
+					sload 4;
+					baload;
+					bspush 10;
+					smul;
+					aload_3;
+					sload 4;
+					sconst_1;
+					sadd;
+					baload;
+					sadd;
+					sstore 6;
+					aload_1;
+					sload_2;
+					sconst_2;
+					sadd;
+					baload;
+					bspush 10;
+					smul;
+					aload_1;
+					sload_2;
+					sconst_3;
+					sadd;
+					baload;
+					sadd;
+					sstore 7;
+					aload_3;
+					sload 4;
+					sconst_2;
+					sadd;
+					baload;
+					bspush 10;
+					smul;
+					aload_3;
+					sload 4;
+					sconst_3;
+					sadd;
+					baload;
+					sadd;
+					sstore 8;
+					aload_1;
+					sload_2;
+					sconst_4;
+					sadd;
+					baload;
+					bspush 10;
+					smul;
+					aload_1;
+					sload_2;
+					sconst_5;
+					sadd;
+					baload;
+					sadd;
+					sstore 9;
+					aload_3;
+					sload 4;
+					sconst_4;
+					sadd;
+					baload;
+					bspush 10;
+					smul;
+					aload_3;
+					sload 4;
+					sconst_5;
+					sadd;
+					baload;
+					sadd;
+					sstore 10;
+					sload 5;
+					sload 6;
+					if_scmpge L2;
+				L1:	sconst_m1;
+					sreturn;
+				L2:	sload 5;
+					sload 6;
+					if_scmple L4;
+				L3:	sconst_1;
+					sreturn;
+				L4:	sload 7;
+					sload 8;
+					if_scmpge L6;
+				L5:	sconst_m1;
+					sreturn;
+				L6:	sload 7;
+					sload 8;
+					if_scmple L8;
+				L7:	sconst_1;
+					sreturn;
+				L8:	sload 9;
+					sload 10;
+					if_scmpge L10;
+				L9:	sconst_m1;
+					sreturn;
+				L10:	sload 9;
+					sload 10;
+					if_scmple L12;
+				L11:	sconst_1;
+					sreturn;
+				L12:	sconst_0;
+					sreturn;
+		}
+
+		.method private static cleanArray([B)V {
+			.stack 3;
+			.locals 1;
+
+				L0:	sconst_0;
+					sstore_1;
+					goto L2;
+				L1:	aload_0;
+					sload_1;
+					sconst_0;
+					bastore;
+					sinc 1 1;
+				L2:	sload_1;
+					aload_0;
+					arraylength;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+		.method private static cleanArray([S)V {
+			.stack 3;
+			.locals 1;
+
+				L0:	sconst_0;
+					sstore_1;
+					goto L2;
+				L1:	aload_0;
+					sload_1;
+					sconst_0;
+					sastore;
+					sinc 1 1;
+				L2:	sload_1;
+					aload_0;
+					arraylength;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+		.method  setCOMFileData([BSS)V 137 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 21;		// reference hig/no/CVCertificate.comFile
+					aload_0;
+					sload_2;
+					putfield_s 22;		// short hig/no/CVCertificate.cvcaRootIndex
+					aload_0;
+					sload_3;
+					putfield_s 23;		// short hig/no/CVCertificate.cvcaAltIndex
+					return;
+		}
+
+	}
+
+	.class public FileSystem 2 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private 0.0[] files 0;		// [Ljava/lang/Object;
+			private short[] fileSizes 1;		// [S
+			private byte[] filePerms 2;		// [B
+			 byte[] currentAuthorization 3;		// [B
+			static final short EF_DG1_FID = 1;		// S
+			static final short EF_DG2_FID = 2;		// S
+			static final short EF_DG3_FID = 3;		// S
+			static final short EF_DG4_FID = 4;		// S
+			static final short EF_DG5_FID = 5;		// S
+			static final short EF_DG6_FID = 6;		// S
+			static final short EF_DG7_FID = 7;		// S
+			static final short EF_DG8_FID = 8;		// S
+			static final short EF_DG9_FID = 9;		// S
+			static final short EF_DG10_FID = 10;		// S
+			static final short EF_DG11_FID = 11;		// S
+			static final short EF_DG12_FID = 12;		// S
+			static final short EF_DG13_FID = 13;		// S
+			static final short EF_DG14_FID = 14;		// S
+			static final short EF_DG15_FID = 15;		// S
+			static final short EF_DG16_FID = 16;		// S
+			static final short EF_SOD_FID = 29;		// S
+			static final short EF_COM_FID = 30;		// S
+			private static final short EF_DG1_INDEX = 0;		// S
+			private static final short EF_DG2_INDEX = 1;		// S
+			private static final short EF_DG3_INDEX = 2;		// S
+			private static final short EF_DG4_INDEX = 3;		// S
+			private static final short EF_DG5_INDEX = 4;		// S
+			private static final short EF_DG6_INDEX = 5;		// S
+			private static final short EF_DG7_INDEX = 6;		// S
+			private static final short EF_DG8_INDEX = 7;		// S
+			private static final short EF_DG9_INDEX = 8;		// S
+			private static final short EF_DG10_INDEX = 9;		// S
+			private static final short EF_DG11_INDEX = 10;		// S
+			private static final short EF_DG12_INDEX = 11;		// S
+			private static final short EF_DG13_INDEX = 12;		// S
+			private static final short EF_DG14_INDEX = 13;		// S
+			private static final short EF_DG15_INDEX = 14;		// S
+			private static final short EF_DG16_INDEX = 15;		// S
+			private static final short EF_SOD_INDEX = 16;		// S
+			private static final short EF_COM_INDEX = 17;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+			createFile(SSZ)V;
+			writeData(SS[BSS)V;
+			getFile(S)[B;
+			getFileSize(S)S;
+		}
+
+		.method  <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 78;		// java/lang/Object.<init>()V
+					aload_0;
+					bspush 18;
+					anewarray 59;		// java/lang/Object
+					putfield_a 24;		// reference hig/no/FileSystem.files
+					aload_0;
+					bspush 18;
+					newarray 12;
+					putfield_a 25;		// reference hig/no/FileSystem.fileSizes
+					aload_0;
+					bspush 18;
+					newarray 11;
+					putfield_a 26;		// reference hig/no/FileSystem.filePerms
+					aload_0;
+					sconst_3;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 27;		// reference hig/no/FileSystem.currentAuthorization
+					sconst_0;
+					sstore_1;
+					goto L2;
+				L1:	getfield_a_this 26;		// reference hig/no/FileSystem.filePerms
+					sload_1;
+					sconst_2;
+					bastore;
+					sinc 1 1;
+				L2:	sload_1;
+					bspush 18;
+					if_scmplt L1;
+				L3:	getfield_a_this 26;		// reference hig/no/FileSystem.filePerms
+					bspush 13;
+					sconst_0;
+					bastore;
+					return;
+		}
+
+		.method  createFile(SSZ)V 128 {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 64;		// hig/no/FileSystem.getFileIndex(S)S
+					sstore 4;
+					getfield_a_this 24;		// reference hig/no/FileSystem.files
+					sload 4;
+					aaload;
+					ifnonnull L2;
+				L1:	getfield_a_this 24;		// reference hig/no/FileSystem.files
+					sload 4;
+					sload_2;
+					newarray 11;
+					aastore;
+				L2:	getfield_a_this 24;		// reference hig/no/FileSystem.files
+					sload 4;
+					aaload;
+					checkcast 11 0;		// T_BYTE
+					arraylength;
+					sload_2;
+					if_scmpge L4;
+				L3:	sspush 27268;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getfield_a_this 25;		// reference hig/no/FileSystem.fileSizes
+					sload 4;
+					sload_2;
+					sastore;
+					sload_3;
+					ifeq L6;
+				L5:	getfield_a_this 26;		// reference hig/no/FileSystem.filePerms
+					sload 4;
+					bspush 32;
+					bastore;
+				L6:	return;
+		}
+
+		.method  writeData(SS[BSS)V 129 {
+			.stack 5;
+			.locals 5;
+
+				L0:	aload_0;
+					sload_1;
+					invokevirtual 65;		// hig/no/FileSystem.getFile(S)[B
+					astore 6;
+					aload_0;
+					sload_1;
+					invokevirtual 66;		// hig/no/FileSystem.getFileSize(S)S
+					sstore 7;
+					aload 6;
+					ifnonnull L2;
+				L1:	sspush 27266;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 7;
+					sload_2;
+					sload 5;
+					sadd;
+					if_scmpge L4;
+				L3:	sspush 27268;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_3;
+					sload 4;
+					aload 6;
+					sload_2;
+					sload 5;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload_1;
+					bspush 30;
+					if_scmpne L14;
+				L5:	sconst_m1;
+					sstore 8;
+					sconst_m1;
+					sstore 9;
+					sconst_0;
+					sstore 10;
+					goto L12;
+				L6:	aload_3;
+					sload 10;
+					baload;
+					sconst_4;
+					if_scmpne L11;
+				L7:	aload_3;
+					sload 10;
+					sconst_1;
+					sadd;
+					baload;
+					bspush 17;
+					if_scmpne L11;
+				L8:	sload 8;
+					sconst_m1;
+					if_scmpne L10;
+				L9:	sload_2;
+					sload 10;
+					sadd;
+					sconst_2;
+					sadd;
+					sstore 8;
+					goto L11;
+				L10:	sload_2;
+					sload 10;
+					sadd;
+					sconst_2;
+					sadd;
+					sstore 9;
+				L11:	sinc 10 1;
+				L12:	sload 10;
+					sload 5;
+					if_scmplt L6;
+				L13:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					aload 6;
+					sload 8;
+					sload 9;
+					invokevirtual 68;		// hig/no/CVCertificate.setCOMFileData([BSS)V
+				L14:	return;
+		}
+
+		.method  getFile(S)[B 130 {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 64;		// hig/no/FileSystem.getFileIndex(S)S
+					sstore_2;
+					sload_2;
+					sconst_m1;
+					if_scmpne L2;
+				L1:	aconst_null;
+					areturn;
+				L2:	getfield_a_this 24;		// reference hig/no/FileSystem.files
+					sload_2;
+					aaload;
+					checkcast 11 0;		// T_BYTE
+					areturn;
+		}
+
+		.method  getFileSize(S)S 131 {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 64;		// hig/no/FileSystem.getFileIndex(S)S
+					sstore_2;
+					sload_2;
+					sconst_m1;
+					if_scmpne L2;
+				L1:	sconst_m1;
+					sreturn;
+				L2:	getfield_a_this 25;		// reference hig/no/FileSystem.fileSizes
+					sload_2;
+					saload;
+					sreturn;
+		}
+
+		.method private getFileIndex(S)S {
+			.stack 3;
+			.locals 3;
+
+				L0:	sconst_m1;
+					sstore_2;
+					sload_1;
+					stableswitch L19 1 30 L1 L2 L3 L4 L5 L6 L7 L8 L9 L10 L11 L12 L13 L14 L15 L16 L19 L19 L19 L19 L19 L19 L19 L19 L19 L19 L19 L19 L17 L18;
+				L1:	sconst_0;
+					sstore_2;
+					goto L20;
+				L2:	sconst_1;
+					sstore_2;
+					goto L20;
+				L3:	sconst_2;
+					sstore_2;
+					goto L20;
+				L4:	sconst_3;
+					sstore_2;
+					goto L20;
+				L5:	sconst_4;
+					sstore_2;
+					goto L20;
+				L6:	sconst_5;
+					sstore_2;
+					goto L20;
+				L7:	bspush 6;
+					sstore_2;
+					goto L20;
+				L8:	bspush 7;
+					sstore_2;
+					goto L20;
+				L9:	bspush 8;
+					sstore_2;
+					goto L20;
+				L10:	bspush 9;
+					sstore_2;
+					goto L20;
+				L11:	bspush 10;
+					sstore_2;
+					goto L20;
+				L12:	bspush 11;
+					sstore_2;
+					goto L20;
+				L13:	bspush 12;
+					sstore_2;
+					goto L20;
+				L14:	bspush 13;
+					sstore_2;
+					goto L20;
+				L15:	bspush 14;
+					sstore_2;
+					goto L20;
+				L16:	bspush 15;
+					sstore_2;
+					goto L20;
+				L17:	bspush 16;
+					sstore_2;
+					goto L20;
+				L18:	bspush 17;
+					sstore_2;
+					goto L20;
+				L19:	sconst_m1;
+					sstore_2;
+				L20:	sload_2;
+					sconst_m1;
+					if_scmpeq L30;
+				L21:	invokestatic 69;		// hig/no/SmartIDApplet.isLocked()Z
+					ifeq L30;
+				L22:	invokestatic 70;		// hig/no/SmartIDApplet.hasMutualAuthenticationKeys()Z
+					ifeq L30;
+				L23:	getfield_a_this 26;		// reference hig/no/FileSystem.filePerms
+					sload_2;
+					baload;
+					sstore_3;
+					sload_3;
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					sand;
+					sload_3;
+					if_scmpeq L25;
+				L24:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L25:	sload_2;
+					bspush 15;
+					if_scmpgt L30;
+				L26:	invokestatic 72;		// hig/no/SmartIDApplet.hasTerminalAuthenticated()Z
+					ifeq L30;
+				L27:	sload_3;
+					bspush 32;
+					if_scmpne L30;
+				L28:	sconst_1;
+					sload_2;
+					sshl;
+					sstore 4;
+					getfield_a_this 27;		// reference hig/no/FileSystem.currentAuthorization
+					sconst_1;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					sload 4;
+					sand;
+					sload 4;
+					if_scmpeq L30;
+				L29:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L30:	sload_2;
+					sreturn;
+		}
+
+	}
+
+	.class public KeyStore 3 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private 1.10 sm_kMac 0;		// Ljavacard/security/DESKey;
+			private 1.10 sm_kEnc 1;		// Ljavacard/security/DESKey;
+			private 1.10 ma_kMac 2;		// Ljavacard/security/DESKey;
+			private 1.10 ma_kEnc 3;		// Ljavacard/security/DESKey;
+			 byte[] tmpKeys 4;		// [B
+			 1.8 rsaPrivateKey 5;		// Ljavacard/security/RSAPrivateKey;
+			 1.9 rsaPublicKey 6;		// Ljavacard/security/RSAPublicKey;
+			 1.18 ecPrivateKey 7;		// Ljavacard/security/ECPrivateKey;
+			 1.19 ecPublicKey 8;		// Ljavacard/security/ECPublicKey;
+			static byte CA_EC_KEYTYPE_PRIVATE = 12;		// B
+			static byte CA_EC_KEYTYPE_PUBLIC = 11;		// B
+			static short CA_EC_KEYLENGTH = 192;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+			getMacKey()Ljavacard/security/DESKey;;
+			getCryptKey()Ljavacard/security/DESKey;;
+			setMutualAuthenticationKeys([BS[BS)V;
+			setSecureMessagingKeys([BS[BS)V;
+		}
+
+		.method  <init>()V {
+			.stack 4;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 78;		// java/lang/Object.<init>()V
+					aload_0;
+					sconst_2;
+					sspush 128;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 74;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 28;		// reference hig/no/KeyStore.sm_kEnc
+					aload_0;
+					sconst_2;
+					sspush 128;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 74;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 29;		// reference hig/no/KeyStore.sm_kMac
+					aload_0;
+					sconst_3;
+					sspush 128;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 74;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 30;		// reference hig/no/KeyStore.ma_kEnc
+					aload_0;
+					sconst_3;
+					sspush 128;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 74;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 31;		// reference hig/no/KeyStore.ma_kMac
+					aload_0;
+					sconst_5;
+					sspush 1024;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 79;		// T_CLASSORINTERFACE javacard/security/RSAPrivateKey
+					putfield_a 32;		// reference hig/no/KeyStore.rsaPrivateKey
+					aload_0;
+					sconst_4;
+					sspush 1024;
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 77;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					putfield_a 33;		// reference hig/no/KeyStore.rsaPublicKey
+					aload_0;
+					getstatic_b 82;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PRIVATE
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 84;		// T_CLASSORINTERFACE javacard/security/ECPrivateKey
+					putfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_0;
+					getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					sconst_0;
+					invokestatic 75;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 87;		// T_CLASSORINTERFACE javacard/security/ECPublicKey
+					putfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_0;
+					bspush 32;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 36;		// reference hig/no/KeyStore.tmpKeys
+					return;
+		}
+
+		.method  getMacKey()Ljavacard/security/DESKey; 128 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+				L0:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L2;
+				L1:	getfield_a_this 29;		// reference hig/no/KeyStore.sm_kMac
+					areturn;
+				L2:	getfield_a_this 31;		// reference hig/no/KeyStore.ma_kMac
+					areturn;
+		}
+
+		.method  getCryptKey()Ljavacard/security/DESKey; 129 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+				L0:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L2;
+				L1:	getfield_a_this 28;		// reference hig/no/KeyStore.sm_kEnc
+					areturn;
+				L2:	getfield_a_this 30;		// reference hig/no/KeyStore.ma_kEnc
+					areturn;
+		}
+
+		.method  setMutualAuthenticationKeys([BS[BS)V 130 {
+			.stack 3;
+			.locals 0;
+
+				L0:	getfield_a_this 30;		// reference hig/no/KeyStore.ma_kEnc
+					aload_3;
+					sload 4;
+					invokeinterface 3 74 5;		// javacard/security/DESKey
+					getfield_a_this 31;		// reference hig/no/KeyStore.ma_kMac
+					aload_1;
+					sload_2;
+					invokeinterface 3 74 5;		// javacard/security/DESKey
+					return;
+		}
+
+		.method  setSecureMessagingKeys([BS[BS)V 131 {
+			.stack 3;
+			.locals 0;
+
+				L0:	getfield_a_this 28;		// reference hig/no/KeyStore.sm_kEnc
+					aload_3;
+					sload 4;
+					invokeinterface 3 74 5;		// javacard/security/DESKey
+					getfield_a_this 29;		// reference hig/no/KeyStore.sm_kMac
+					aload_1;
+					sload_2;
+					invokeinterface 3 74 5;		// javacard/security/DESKey
+					return;
+		}
+
+	}
+
+	.class public SmartIDApplet 4 extends 2.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private byte[] rnd 0;		// [B
+			private byte[] ssc 1;		// [B
+			private byte[] sicId 2;		// [B
+			private FileSystem fileSystem 3;		// Lhig/no/FileSystem;
+			private 1.14 randomData 4;		// Ljavacard/security/RandomData;
+			private SmartIDCrypto crypto 5;		// Lhig/no/SmartIDCrypto;
+			private byte[] lastINS 6;		// [B
+			private short[] chainingOffset 7;		// [S
+			private byte[] chainingTmp 8;		// [B
+			 KeyStore keyStore 9;		// Lhig/no/KeyStore;
+			private short rndLength 10;		// S
+			private short selectedFile 11;		// S
+			static byte[] volatileState;		// [B
+			static byte persistentState;		// B
+			static final byte CHALLENGED = 1;		// B
+			static final byte MUTUAL_AUTHENTICATED = 2;		// B
+			static final byte FILE_SELECTED = 4;		// B
+			static final byte ACTIVE_AUTHENTICATED = 8;		// B
+			static final byte CHIP_AUTHENTICATED = 16;		// B
+			static final byte TERMINAL_AUTHENTICATED = 32;		// B
+			static final byte HAS_MUTUALAUTHENTICATION_KEYS = 1;		// B
+			static final byte HAS_EXPONENT = 2;		// B
+			static final byte LOCKED = 4;		// B
+			static final byte HAS_MODULUS = 8;		// B
+			static final byte HAS_EC_KEY = 16;		// B
+			static final byte HAS_CVCERTIFICATE = 32;		// B
+			static final byte HAS_SICID = 64;		// B
+			static final byte CHAIN_CLA = 16;		// B
+			static final byte INS_EXTERNAL_AUTHENTICATE = -126;		// B
+			static final byte INS_GET_CHALLENGE = -124;		// B
+			static final byte CLA_PROTECTED_APDU = 12;		// B
+			static final byte CLA_PLAIN_APDU = 0;		// B
+			static final byte INS_INTERNAL_AUTHENTICATE = -120;		// B
+			static final byte INS_PSO = 42;		// B
+			static final byte INS_MSE = 34;		// B
+			static final byte P2_VERIFYCERT = -66;		// B
+			static final byte P1_SETFORCOMPUTATION = 65;		// B
+			static final byte P1_SETFORVERIFICATION = -127;		// B
+			static final byte P2_KAT = -90;		// B
+			static final byte P2_DST = -74;		// B
+			static final byte P2_AT = -92;		// B
+			static final byte INS_SELECT_FILE = -92;		// B
+			static final byte INS_READ_BINARY = -80;		// B
+			static final byte INS_UPDATE_BINARY = -42;		// B
+			static final byte INS_CREATE_FILE = -32;		// B
+			static final byte INS_PUT_DATA = -38;		// B
+			static final short KEY_LENGTH = 16;		// S
+			static final short KEYMATERIAL_LENGTH = 16;		// S
+			static final short RND_LENGTH = 32;		// S
+			static final short MAC_LENGTH = 8;		// S
+			private static final byte PRIVMODULUS_TAG = 96;		// B
+			private static final byte PRIVEXPONENT_TAG = 97;		// B
+			private static final byte KEYSEED_TAG = 98;		// B
+			private static final byte ECPRIVATEKEY_TAG = 99;		// B
+			private static final byte CVCERTIFICATE_TAG = 100;		// B
+			private static final byte SICID_TAG = 101;		// B
+			private static final short SW_OK = -28672;		// S
+			private static final short SW_REFERENCE_DATA_NOT_FOUND = 27272;		// S
+			static final short SW_INTERNAL_ERROR = 28006;		// S
+			static final short SW_SM_DO_MISSING = 27015;		// S
+			static final short SW_SM_DO_INCORRECT = 27016;		// S
+			private static final byte MASK_SFI = -128;		// B
+			static CVCertificate certificate;		// Lhig/no/CVCertificate;
+			private static final short CHAINING_BUFFER_LENGTH = 400;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 2.0 { 		// javacard/framework/ISO7816
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 4;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 91;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					new 92;		// hig/no/FileSystem
+					dup;
+					invokespecial 93;		// hig/no/FileSystem.<init>()V
+					putfield_a 37;		// reference hig/no/SmartIDApplet.fileSystem
+					aload_0;
+					sconst_1;
+					invokestatic 95;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					putfield_a 38;		// reference hig/no/SmartIDApplet.randomData
+					new 97;		// hig/no/CVCertificate
+					dup;
+					invokespecial 98;		// hig/no/CVCertificate.<init>()V
+					putstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					aload_0;
+					new 99;		// hig/no/KeyStore
+					dup;
+					invokespecial 100;		// hig/no/KeyStore.<init>()V
+					putfield_a 39;		// reference hig/no/SmartIDApplet.keyStore
+					aload_0;
+					new 102;		// hig/no/SmartIDCrypto
+					dup;
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					invokespecial 103;		// hig/no/SmartIDCrypto.<init>(Lhig/no/KeyStore;)V
+					putfield_a 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_0;
+					bspush 32;
+					sconst_1;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 41;		// reference hig/no/SmartIDApplet.rnd
+					aload_0;
+					bspush 8;
+					sconst_1;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 42;		// reference hig/no/SmartIDApplet.ssc
+					sconst_1;
+					sconst_1;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					aload_0;
+					sconst_1;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 43;		// reference hig/no/SmartIDApplet.lastINS
+					aload_0;
+					sconst_1;
+					sconst_2;
+					invokestatic 80;		// javacard/framework/JCSystem.makeTransientShortArray(SB)[S
+					putfield_a 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					aload_0;
+					sspush 400;
+					sconst_2;
+					invokestatic 156;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 45;		// reference hig/no/SmartIDApplet.chainingTmp
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 110;		// hig/no/SmartIDApplet
+					dup;
+					invokespecial 111;		// hig/no/SmartIDApplet.<init>()V
+					invokevirtual 112;		// javacard/framework/Applet.register()V
+					return;
+		}
+
+		.method private static needLe(B)Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	sload_0;
+					bspush -80;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 6;
+			.locals 8;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					baload;
+					sstore_3;
+					aload_2;
+					sconst_1;
+					baload;
+					sstore 4;
+					sspush -28672;
+					sstore 5;
+					sload_3;
+					bspush 12;
+					sload 4;
+					bspush 42;
+					if_scmpne L2;
+				L1:	bspush 16;
+					goto L3;
+				L2:	sconst_0;
+				L3:	sor;
+					sconst_m1;
+					sxor;
+					sand;
+					ifeq L5;
+				L4:	sspush 28160;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload_3;
+					bspush 12;
+					sand;
+					bspush 12;
+					if_scmpne L7;
+				L6:	sconst_1;
+					goto L8;
+				L7:	sconst_0;
+				L8:	sstore 6;
+					sconst_0;
+					sstore 7;
+					sconst_0;
+					sstore 8;
+					getfield_a_this 43;		// reference hig/no/SmartIDApplet.lastINS
+					sconst_0;
+					baload;
+					sload 4;
+					if_scmpeq L10;
+				L9:	getfield_a_this 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					sconst_0;
+					sconst_0;
+					sastore;
+				L10:	getfield_a_this 43;		// reference hig/no/SmartIDApplet.lastINS
+					sconst_0;
+					sload 4;
+					bastore;
+					aload_0;
+					invokevirtual 115;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L12;
+				L11:	return;
+				L12:	sload 6;
+					ifeq L18;
+				L13:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L17;
+				L14:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getfield_a_this 42;		// reference hig/no/SmartIDApplet.ssc
+					aload_1;
+					invokevirtual 116;		// hig/no/SmartIDCrypto.unwrapCommandAPDU([BLjavacard/framework/APDU;)S
+					sstore 8;
+				L15:	goto L20;
+				L16:	astore 9;
+					aload 9;
+					invokevirtual 117;		// javacard/framework/CardRuntimeException.getReason()S
+					sstore 5;
+					sconst_0;
+					sstore 6;
+					invokestatic 118;		// hig/no/SmartIDApplet.setNoChallenged()V
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					bspush -3;
+					sand;
+					bastore;
+					goto L20;
+				L17:	sspush 26754;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+					goto L20;
+				L18:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L20;
+				L19:	invokestatic 118;		// hig/no/SmartIDApplet.setNoChallenged()V
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					bspush -3;
+					sand;
+					bastore;
+					sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L20:	sload 5;
+					sspush -28672;
+					if_scmpne L27;
+				L21:	sload 6;
+					ifne L24;
+				L22:	sload 4;
+					invokestatic 119;		// hig/no/SmartIDApplet.needLe(B)Z
+					ifeq L24;
+				L23:	aload_1;
+					invokevirtual 120;		// javacard/framework/APDU.setOutgoing()S
+					sstore 8;
+				L24:	aload_0;
+					aload_1;
+					sload_3;
+					sload 4;
+					sload 6;
+					sload 8;
+					invokespecial 121;		// hig/no/SmartIDApplet.processAPDU(Ljavacard/framework/APDU;BBZS)S
+					sstore 7;
+				L25:	goto L27;
+				L26:	astore 9;
+					aload 9;
+					invokevirtual 117;		// javacard/framework/CardRuntimeException.getReason()S
+					sstore 5;
+				L27:	sload 6;
+					ifeq L30;
+				L28:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L30;
+				L29:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getfield_a_this 42;		// reference hig/no/SmartIDApplet.ssc
+					aload_1;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					sload 7;
+					invokevirtual 122;		// hig/no/SmartIDCrypto.getApduBufferOffset(S)S
+					sload 7;
+					sload 5;
+					invokevirtual 123;		// hig/no/SmartIDCrypto.wrapResponseAPDU([BLjavacard/framework/APDU;SSS)S
+					sstore 7;
+				L30:	sload 7;
+					ifle L36;
+				L31:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					sconst_3;
+					if_scmpeq L33;
+				L32:	aload_1;
+					invokevirtual 120;		// javacard/framework/APDU.setOutgoing()S
+					pop;
+				L33:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					sconst_4;
+					if_scmpeq L35;
+				L34:	aload_1;
+					sload 7;
+					invokevirtual 125;		// javacard/framework/APDU.setOutgoingLength(S)V
+				L35:	aload_1;
+					sconst_0;
+					sload 7;
+					invokevirtual 126;		// javacard/framework/APDU.sendBytes(SS)V
+				L36:	sload 5;
+					sspush -28672;
+					if_scmpeq L38;
+				L37:	sload 5;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L38:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L14 L15 L16 113;
+				L21 L25 L26 113;
+			}
+		}
+
+		.method private processAPDU(Ljavacard/framework/APDU;BBZS)S {
+			.stack 4;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	sconst_0;
+					sstore 6;
+					sload_3;
+					slookupswitch L13 10 -126 L2 -124 L1 -120 L3 -92 L8 -80 L9 -42 L10 -38 L12 -32 L11 34 L7 42 L4;
+				L1:	aload_0;
+					aload_1;
+					sload 4;
+					sload 5;
+					invokespecial 127;		// hig/no/SmartIDApplet.processGetChallenge(Ljavacard/framework/APDU;ZS)S
+					sstore 6;
+					goto L14;
+				L2:	aload_0;
+					aload_1;
+					sload 4;
+					invokespecial 128;		// hig/no/SmartIDApplet.processMutualAuthenticate(Ljavacard/framework/APDU;Z)S
+					sstore 6;
+					goto L14;
+				L3:	aload_0;
+					aload_1;
+					sload 4;
+					invokespecial 129;		// hig/no/SmartIDApplet.processInternalAuthenticate(Ljavacard/framework/APDU;Z)S
+					sstore 6;
+					goto L14;
+				L4:	sload 4;
+					ifne L6;
+				L5:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	aload_0;
+					aload_1;
+					invokespecial 130;		// hig/no/SmartIDApplet.processPSO(Ljavacard/framework/APDU;)S
+					sstore 6;
+					goto L14;
+				L7:	aload_0;
+					aload_1;
+					sload 4;
+					invokespecial 131;		// hig/no/SmartIDApplet.processMSE(Ljavacard/framework/APDU;Z)S
+					sstore 6;
+					goto L14;
+				L8:	aload_0;
+					aload_1;
+					invokespecial 132;		// hig/no/SmartIDApplet.processSelectFile(Ljavacard/framework/APDU;)V
+					goto L14;
+				L9:	aload_0;
+					aload_1;
+					sload 5;
+					sload 4;
+					invokespecial 133;		// hig/no/SmartIDApplet.processReadBinary(Ljavacard/framework/APDU;SZ)S
+					sstore 6;
+					goto L14;
+				L10:	aload_0;
+					aload_1;
+					invokespecial 134;		// hig/no/SmartIDApplet.processUpdateBinary(Ljavacard/framework/APDU;)V
+					goto L14;
+				L11:	aload_0;
+					aload_1;
+					invokespecial 135;		// hig/no/SmartIDApplet.processCreateFile(Ljavacard/framework/APDU;)V
+					goto L14;
+				L12:	aload_0;
+					aload_1;
+					invokespecial 136;		// hig/no/SmartIDApplet.processPutData(Ljavacard/framework/APDU;)V
+					goto L14;
+				L13:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	sload 6;
+					sreturn;
+		}
+
+		.method private processPSO(Ljavacard/framework/APDU;)S {
+			.stack 7;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					invokestatic 137;		// hig/no/SmartIDApplet.hasEAPCertificate()Z
+					ifeq L2;
+				L1:	invokestatic 138;		// hig/no/SmartIDApplet.hasSicId()Z
+					ifne L3;
+				L2:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L3:	invokestatic 139;		// hig/no/SmartIDApplet.hasChipAuthenticated()Z
+					ifeq L5;
+				L4:	invokestatic 72;		// hig/no/SmartIDApplet.hasTerminalAuthenticated()Z
+					ifeq L6;
+				L5:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	aload_2;
+					sconst_2;
+					baload;
+					ifeq L9;
+				L7:	aload_2;
+					sconst_3;
+					baload;
+					bspush -66;
+					if_scmpeq L9;
+				L8:	sspush 27270;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 140;		// hig/no/CVCertificate.subjectIdSelected()Z
+					ifne L11;
+				L10:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 141;		// hig/no/CVCertificate.selectRootHolderReference()V
+				L11:	aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+					getfield_a_this 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					sconst_0;
+					saload;
+					sspush 400;
+					sload_3;
+					ssub;
+					if_scmple L13;
+				L12:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	getfield_a_this 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					sconst_0;
+					aload_2;
+					sconst_5;
+					getfield_a_this 45;		// reference hig/no/SmartIDApplet.chainingTmp
+					getfield_a_this 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					sconst_0;
+					saload;
+					sload_3;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					sastore;
+					aload_2;
+					sconst_0;
+					baload;
+					bspush 16;
+					sand;
+					bspush 16;
+					if_scmpne L15;
+				L14:	sconst_0;
+					sreturn;
+				L15:	getfield_a_this 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					sconst_0;
+					saload;
+					sstore 4;
+					getfield_a_this 44;		// reference hig/no/SmartIDApplet.chainingOffset
+					sconst_0;
+					sconst_0;
+					sastore;
+					getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					getfield_a_this 45;		// reference hig/no/SmartIDApplet.chainingTmp
+					sconst_0;
+					sload 4;
+					sconst_0;
+					invokevirtual 142;		// hig/no/CVCertificate.parseCertificate([BSSZ)V
+					getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 143;		// hig/no/CVCertificate.verify()Z
+					ifne L17;
+				L16:	sspush 25344;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L17:	sconst_0;
+					sreturn;
+		}
+
+		.method private processMSE(Ljavacard/framework/APDU;Z)S {
+			.stack 4;
+			.locals 10;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_3;
+					aload_3;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					s2b;
+					sstore 4;
+					aload_3;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					s2b;
+					sstore 5;
+					aload_3;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 6;
+					sconst_5;
+					sstore 7;
+					invokestatic 144;		// hig/no/SmartIDApplet.hasEACKey()Z
+					ifne L2;
+				L1:	sload 4;
+					bspush 65;
+					if_scmpeq L5;
+				L2:	invokestatic 137;		// hig/no/SmartIDApplet.hasEAPCertificate()Z
+					ifeq L4;
+				L3:	invokestatic 138;		// hig/no/SmartIDApplet.hasSicId()Z
+					ifne L6;
+				L4:	sload 4;
+					bspush -127;
+					if_scmpne L6;
+				L5:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L8;
+				L7:	sload_2;
+					ifeq L9;
+				L8:	invokestatic 72;		// hig/no/SmartIDApplet.hasTerminalAuthenticated()Z
+					ifeq L10;
+				L9:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	sload 4;
+					bspush 65;
+					if_scmpne_w L30;
+				L11:	sload 5;
+					bspush -90;
+					if_scmpne_w L30;
+				L12:	sload 6;
+					sconst_5;
+					sadd;
+					sstore 8;
+					sload 7;
+					sload 8;
+					sconst_2;
+					ssub;
+					if_scmple L14;
+				L13:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	aload_3;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					baload;
+					bspush -111;
+					if_scmpeq L16;
+				L15:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	aload_3;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					baload;
+					sspush 255;
+					sand;
+					sstore 9;
+					sload 7;
+					sstore 10;
+					sload 10;
+					sload 8;
+					sload 9;
+					ssub;
+					if_scmple L18;
+				L17:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	sload 7;
+					sload 9;
+					sadd;
+					sstore 7;
+					sconst_0;
+					sstore 11;
+					sconst_0;
+					sstore 12;
+					sload 7;
+					sload 8;
+					if_scmpeq L25;
+				L19:	sload 7;
+					sload 8;
+					sconst_2;
+					ssub;
+					if_scmple L21;
+				L20:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L21:	aload_3;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					baload;
+					bspush -124;
+					if_scmpeq L23;
+				L22:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L23:	aload_3;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					baload;
+					sspush 255;
+					sand;
+					sstore 12;
+					sload 7;
+					sstore 11;
+					sload 11;
+					sload 8;
+					sload 12;
+					ssub;
+					if_scmpeq L25;
+				L24:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L25:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sload 10;
+					sload 9;
+					invokevirtual 145;		// hig/no/SmartIDCrypto.authenticateChip([BSS)Z
+					ifne L27;
+				L26:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L27:	sload_2;
+					ifne L29;
+				L28:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_2;
+					sor;
+					bastore;
+				L29:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					bspush 16;
+					sor;
+					bastore;
+					sconst_0;
+					sreturn;
+				L30:	sload 4;
+					bspush -127;
+					if_scmpne L44;
+				L31:	sload 5;
+					bspush -74;
+					if_scmpeq L33;
+				L32:	sload 5;
+					bspush -92;
+					if_scmpne L44;
+				L33:	invokestatic 139;		// hig/no/SmartIDApplet.hasChipAuthenticated()Z
+					ifeq L35;
+				L34:	invokestatic 72;		// hig/no/SmartIDApplet.hasTerminalAuthenticated()Z
+					ifeq L36;
+				L35:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L36:	sload 6;
+					sconst_5;
+					sadd;
+					sstore 8;
+					sload 7;
+					sload 8;
+					sconst_2;
+					ssub;
+					if_scmple L38;
+				L37:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L38:	aload_3;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					baload;
+					bspush -109;
+					if_scmpeq L40;
+				L39:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L40:	aload_3;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					baload;
+					sspush 255;
+					sand;
+					sstore 9;
+					sload 7;
+					sload 8;
+					sload 9;
+					ssub;
+					if_scmpeq L42;
+				L41:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L42:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					aload_3;
+					sload 7;
+					sload 9;
+					invokevirtual 58;		// hig/no/CVCertificate.selectSubjectId([BSS)Z
+					ifne L45;
+				L43:	sspush 27272;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+					goto L45;
+				L44:	sspush 27270;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L45:	sconst_0;
+					sreturn;
+		}
+
+		.method private processPutData(Ljavacard/framework/APDU;)V {
+			.stack 6;
+			.locals 10;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	invokestatic 69;		// hig/no/SmartIDApplet.isLocked()Z
+					ifeq L2;
+				L1:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					sconst_5;
+					sstore_3;
+					aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 4;
+					aload_2;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					aload_2;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					sstore 6;
+					aload_2;
+					arraylength;
+					sload_3;
+					sload 4;
+					sadd;
+					if_scmpge L4;
+				L3:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	sload 5;
+					sspush 222;
+					if_scmpne L7;
+				L5:	sload 6;
+					sspush 173;
+					if_scmpne L7;
+				L6:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					sconst_4;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					return;
+				L7:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					ifne L9;
+				L8:	aload_1;
+					invokevirtual 147;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+				L9:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					sconst_2;
+					if_scmpge L11;
+				L10:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	sload 5;
+					ifne L16;
+				L12:	sload 6;
+					bspush 96;
+					if_scmpne L16;
+				L13:	aload_2;
+					sload_3;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_3;
+					invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore 7;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sstore 8;
+					aload_2;
+					sload 7;
+					baload;
+					ifne L15;
+				L14:	sinc 8 -1;
+					sinc 7 1;
+				L15:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 32;		// reference hig/no/KeyStore.rsaPrivateKey
+					aload_2;
+					sload 7;
+					sload 8;
+					invokeinterface 4 79 7;		// javacard/security/RSAPrivateKey
+					getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 8;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					goto_w L74;
+				L16:	sload 5;
+					ifne L21;
+				L17:	sload 6;
+					bspush 97;
+					if_scmpne L21;
+				L18:	aload_2;
+					sload_3;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_3;
+					invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore 7;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sstore 8;
+					aload_2;
+					sload 7;
+					baload;
+					ifne L20;
+				L19:	sinc 8 -1;
+					sinc 7 1;
+				L20:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 32;		// reference hig/no/KeyStore.rsaPrivateKey
+					aload_2;
+					sload 7;
+					sload 8;
+					invokeinterface 4 79 6;		// javacard/security/RSAPrivateKey
+					getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					sconst_2;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					goto_w L74;
+				L21:	sload 5;
+					ifne L24;
+				L22:	sload 6;
+					bspush 98;
+					if_scmpne L24;
+				L23:	sload_3;
+					sload 4;
+					sadd;
+					sstore 7;
+					sload_3;
+					sload 4;
+					sadd;
+					bspush 16;
+					sadd;
+					sstore 8;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_2;
+					sload_3;
+					sload 4;
+					sconst_2;
+					sload 7;
+					invokevirtual 148;		// hig/no/SmartIDCrypto.deriveKey([BSSBS)V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_2;
+					sload_3;
+					sload 4;
+					sconst_1;
+					sload 8;
+					invokevirtual 148;		// hig/no/SmartIDCrypto.deriveKey([BSSBS)V
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					aload_2;
+					sload 7;
+					aload_2;
+					sload 8;
+					invokevirtual 149;		// hig/no/KeyStore.setMutualAuthenticationKeys([BS[BS)V
+					getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					sconst_1;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					goto_w L74;
+				L24:	sload 5;
+					ifne_w L63;
+				L25:	sload 6;
+					bspush 99;
+					if_scmpne_w L63;
+				L26:	sload_3;
+					sload 4;
+					sadd;
+					sstore 7;
+					goto_w L59;
+				L27:	aload_2;
+					sload_3;
+					invokestatic 185;		// hig/no/BERTLVScanner.readTag([BS)S
+					sstore_3;
+					aload_2;
+					sload_3;
+					invokestatic 189;		// hig/no/BERTLVScanner.readLength([BS)S
+					sstore_3;
+					getstatic_s 62;		// short hig/no/BERTLVScanner.valueLength
+					sstore 8;
+					getstatic_s 61;		// short hig/no/BERTLVScanner.tag
+					stableswitch L57 129 135 L28 L36 L40 L44 L45 L49 L56;
+				L28:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 9;
+					if_scmpne L32;
+				L29:	sload 8;
+					bspush 6;
+					if_scmpne L31;
+				L30:	aload_2;
+					sload_3;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					sstore 9;
+					aload_2;
+					sload_3;
+					sconst_2;
+					sadd;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					sstore 10;
+					aload_2;
+					sload_3;
+					sconst_4;
+					sadd;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					sstore 11;
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					sload 9;
+					sload 10;
+					sload 11;
+					invokeinterface 4 84 6;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					sload 9;
+					sload 10;
+					sload 11;
+					invokeinterface 4 87 6;		// javacard/security/ECPublicKey
+					goto_w L58;
+				L31:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					invokeinterface 2 84 5;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_2;
+					sload_3;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					invokeinterface 2 87 5;		// javacard/security/ECPublicKey
+					goto_w L58;
+				L32:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 11;
+					if_scmpne L35;
+				L33:	sload 8;
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					bspush 8;
+					sdiv;
+					if_scmple L35;
+				L34:	sinc 3 1;
+					sinc 8 -1;
+				L35:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 84 4;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 87 4;		// javacard/security/ECPublicKey
+					goto_w L58;
+				L36:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 11;
+					if_scmpne L39;
+				L37:	sload 8;
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					bspush 8;
+					sdiv;
+					if_scmple L39;
+				L38:	sinc 3 1;
+					sinc 8 -1;
+				L39:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 84 7;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 87 7;		// javacard/security/ECPublicKey
+					goto_w L58;
+				L40:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 11;
+					if_scmpne L43;
+				L41:	sload 8;
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					bspush 8;
+					sdiv;
+					if_scmple L43;
+				L42:	sinc 3 1;
+					sinc 8 -1;
+				L43:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 84 8;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 87 8;		// javacard/security/ECPublicKey
+					goto_w L58;
+				L44:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 84 9;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 87 9;		// javacard/security/ECPublicKey
+					goto_w L58;
+				L45:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 11;
+					if_scmpne L48;
+				L46:	sload 8;
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					bspush 8;
+					sdiv;
+					if_scmple L48;
+				L47:	sinc 3 1;
+					sinc 8 -1;
+				L48:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 84 10;		// javacard/security/ECPrivateKey
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 87 10;		// javacard/security/ECPublicKey
+					goto L58;
+				L49:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 9;
+					if_scmpne L52;
+				L50:	sload 8;
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					bspush 8;
+					sdiv;
+					if_scmpne L52;
+				L51:	sinc 3 -1;
+					sinc 8 1;
+					aload_2;
+					sload_3;
+					sconst_0;
+					bastore;
+				L52:	getstatic_b 86;		// byte hig/no/KeyStore.CA_EC_KEYTYPE_PUBLIC
+					bspush 11;
+					if_scmpne L55;
+				L53:	sload 8;
+					getstatic_s 83;		// short hig/no/KeyStore.CA_EC_KEYLENGTH
+					bspush 8;
+					sdiv;
+					if_scmple L55;
+				L54:	sinc 3 1;
+					sinc 8 -1;
+				L55:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					aload_2;
+					sload_3;
+					sload 8;
+					invokeinterface 4 84 18;		// javacard/security/ECPrivateKey
+					goto L58;
+				L56:	goto L58;
+				L57:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L58:	invokestatic 191;		// hig/no/BERTLVScanner.skipValue()S
+					sstore_3;
+				L59:	sload_3;
+					sload 7;
+					if_scmplt_w L27;
+				L60:	getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					invokeinterface 1 84 3;		// javacard/security/ECPrivateKey
+					ifeq L62;
+				L61:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 16;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					goto L74;
+				L62:	sspush 27264;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+					goto L74;
+				L63:	sload 5;
+					ifne L68;
+				L64:	sload 6;
+					bspush 100;
+					if_scmpne L68;
+				L65:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 32;
+					sand;
+					bspush 32;
+					if_scmpne L67;
+				L66:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L67:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					aload_2;
+					sload_3;
+					sload 4;
+					sconst_1;
+					invokevirtual 142;		// hig/no/CVCertificate.parseCertificate([BSSZ)V
+					getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					aload_2;
+					invokevirtual 150;		// hig/no/CVCertificate.setRootCertificate([B)V
+					getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 32;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					goto L74;
+				L68:	sload 5;
+					ifne L73;
+				L69:	sload 6;
+					bspush 101;
+					if_scmpne L73;
+				L70:	getfield_a_this 46;		// reference hig/no/SmartIDApplet.sicId
+					ifnull L72;
+				L71:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L72:	aload_0;
+					sload 4;
+					newarray 11;
+					putfield_a 46;		// reference hig/no/SmartIDApplet.sicId
+					aload_2;
+					sload_3;
+					getfield_a_this 46;		// reference hig/no/SmartIDApplet.sicId
+					sconst_0;
+					sload 4;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 64;
+					sor;
+					putstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					goto L74;
+				L73:	sspush 27270;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L74:	return;
+		}
+
+		.method private processInternalAuthenticate(Ljavacard/framework/APDU;Z)S {
+			.stack 6;
+			.locals 15;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	invokestatic 152;		// hig/no/SmartIDApplet.hasInternalAuthenticationKeys()Z
+					ifeq L4;
+				L1:	invokestatic 70;		// hig/no/SmartIDApplet.hasMutualAuthenticationKeys()Z
+					ifeq L5;
+				L2:	sload_2;
+					ifeq L4;
+				L3:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifne L5;
+				L4:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sconst_5;
+					sstore_3;
+					sconst_0;
+					sstore 4;
+					sload_2;
+					ifeq L7;
+				L6:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					sspush 128;
+					invokevirtual 122;		// hig/no/SmartIDCrypto.getApduBufferOffset(S)S
+					sstore 4;
+				L7:	sconst_1;
+					sstore 5;
+					bspush 106;
+					sstore 6;
+					sload 4;
+					sload 5;
+					sadd;
+					sstore 7;
+					bspush 8;
+					sstore 8;
+					sload 7;
+					sload 6;
+					sadd;
+					sstore 9;
+					sload 7;
+					sload 6;
+					sadd;
+					sstore 10;
+					bspush 20;
+					sstore 11;
+					sload 10;
+					sload 11;
+					sadd;
+					sstore 12;
+					sconst_1;
+					sstore 13;
+					aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore 14;
+					aload 14;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 15;
+					sload 15;
+					sload 8;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	aload 14;
+					sload_3;
+					aload 14;
+					sload 9;
+					sload 8;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 7;
+					sstore 16;
+					goto L11;
+				L10:	aload 14;
+					sload 16;
+					sconst_0;
+					bastore;
+					sinc 16 1;
+				L11:	sload 16;
+					sload 7;
+					sload 6;
+					sadd;
+					if_scmplt L10;
+				L12:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getfield_a 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					aload 14;
+					sload 7;
+					sload 6;
+					sload 8;
+					sadd;
+					aload 14;
+					sload 10;
+					invokevirtual 154;		// javacard/security/MessageDigest.doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getfield_a 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					invokevirtual 155;		// javacard/security/MessageDigest.reset()V
+					aload 14;
+					sload 12;
+					bspush -68;
+					bastore;
+					aload 14;
+					sload 4;
+					bspush 106;
+					bastore;
+					sload 5;
+					sload 6;
+					sadd;
+					sload 11;
+					sadd;
+					sload 13;
+					sadd;
+					sstore 16;
+					sload 16;
+					sspush 128;
+					if_scmpeq L14;
+				L13:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getfield_a 48;		// reference hig/no/SmartIDCrypto.rsaCiph
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					getfield_a 32;		// reference hig/no/KeyStore.rsaPrivateKey
+					sconst_2;
+					invokevirtual 157;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getfield_a 48;		// reference hig/no/SmartIDCrypto.rsaCiph
+					aload 14;
+					sload 4;
+					sload 16;
+					aload 14;
+					sload 4;
+					invokevirtual 158;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					sstore 17;
+					sload 17;
+					sspush 128;
+					if_scmpeq L16;
+				L15:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	sload 17;
+					sreturn;
+		}
+
+		.method private processGetChallenge(Ljavacard/framework/APDU;ZS)S {
+			.stack 5;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	sload_2;
+					ifeq L8;
+				L1:	invokestatic 137;		// hig/no/SmartIDApplet.hasEAPCertificate()Z
+					ifeq L3;
+				L2:	invokestatic 138;		// hig/no/SmartIDApplet.hasSicId()Z
+					ifne L4;
+				L3:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	invokestatic 139;		// hig/no/SmartIDApplet.hasChipAuthenticated()Z
+					ifeq L7;
+				L5:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 159;		// hig/no/CVCertificate.getPublicKey()Ljavacard/security/RSAPublicKey;
+					invokeinterface 1 77 3;		// javacard/security/RSAPublicKey
+					ifeq L7;
+				L6:	invokestatic 72;		// hig/no/SmartIDApplet.hasTerminalAuthenticated()Z
+					ifeq L13;
+				L7:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+					goto L13;
+				L8:	invokestatic 70;		// hig/no/SmartIDApplet.hasMutualAuthenticationKeys()Z
+					ifne L10;
+				L9:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	invokestatic 70;		// hig/no/SmartIDApplet.hasMutualAuthenticationKeys()Z
+					ifeq L12;
+				L11:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L13;
+				L12:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore 4;
+					sload_2;
+					ifne L15;
+				L14:	aload_1;
+					invokevirtual 120;		// javacard/framework/APDU.setOutgoing()S
+					sstore_3;
+				L15:	sload_3;
+					bspush 32;
+					if_scmpgt L18;
+				L16:	sload_2;
+					ifne L19;
+				L17:	sload_3;
+					bspush 8;
+					if_scmpeq L19;
+				L18:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L19:	getfield_a_this 38;		// reference hig/no/SmartIDApplet.randomData
+					getfield_a_this 41;		// reference hig/no/SmartIDApplet.rnd
+					sconst_0;
+					sload_3;
+					invokevirtual 160;		// javacard/security/RandomData.generateData([BSS)V
+					aload_0;
+					sload_3;
+					putfield_s 49;		// short hig/no/SmartIDApplet.rndLength
+					sload_2;
+					ifeq L21;
+				L20:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					sload_3;
+					invokevirtual 122;		// hig/no/SmartIDCrypto.getApduBufferOffset(S)S
+					goto L22;
+				L21:	sconst_0;
+				L22:	sstore 5;
+					getfield_a_this 41;		// reference hig/no/SmartIDApplet.rnd
+					sconst_0;
+					aload 4;
+					sload 5;
+					sload_3;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_1;
+					sor;
+					bastore;
+					sload_3;
+					sreturn;
+		}
+
+		.method private processMutualAuthenticate(Ljavacard/framework/APDU;Z)S {
+			.stack 8;
+			.locals 15;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	sload_2;
+					ifeq_w L12;
+				L1:	invokestatic 137;		// hig/no/SmartIDApplet.hasEAPCertificate()Z
+					ifeq L3;
+				L2:	invokestatic 138;		// hig/no/SmartIDApplet.hasSicId()Z
+					ifne L4;
+				L3:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	invokestatic 139;		// hig/no/SmartIDApplet.hasChipAuthenticated()Z
+					ifeq L8;
+				L5:	invokestatic 162;		// hig/no/SmartIDApplet.isChallenged()Z
+					ifeq L8;
+				L6:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 159;		// hig/no/CVCertificate.getPublicKey()Ljavacard/security/RSAPublicKey;
+					invokeinterface 1 77 3;		// javacard/security/RSAPublicKey
+					ifeq L8;
+				L7:	invokestatic 72;		// hig/no/SmartIDApplet.hasTerminalAuthenticated()Z
+					ifeq L9;
+				L8:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_3;
+					sconst_5;
+					sstore 4;
+					aload_3;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					invokestatic 118;		// hig/no/SmartIDApplet.setNoChallenged()V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 159;		// hig/no/CVCertificate.getPublicKey()Ljavacard/security/RSAPublicKey;
+					getfield_a_this 41;		// reference hig/no/SmartIDApplet.rnd
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					getfield_a_this 46;		// reference hig/no/SmartIDApplet.sicId
+					aload_3;
+					sload 4;
+					sload 5;
+					invokevirtual 163;		// hig/no/SmartIDCrypto.eapVerifySignature(Ljavacard/security/RSAPublicKey;[BS[B[BSS)Z
+					ifne L11;
+				L10:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 176;		// hig/no/CVCertificate.clear()V
+					sspush 25344;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 164;		// hig/no/CVCertificate.getAuthorization()[B
+					sconst_1;
+					getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					getfield_a 27;		// reference hig/no/FileSystem.currentAuthorization
+					sconst_0;
+					sconst_3;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getstatic_a 67;		// reference hig/no/SmartIDApplet.certificate
+					invokevirtual 176;		// hig/no/CVCertificate.clear()V
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					bspush 32;
+					sor;
+					bastore;
+					sconst_0;
+					sreturn;
+				L12:	invokestatic 70;		// hig/no/SmartIDApplet.hasMutualAuthenticationKeys()Z
+					ifne L14;
+				L13:	sspush 27904;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	invokestatic 162;		// hig/no/SmartIDApplet.isChallenged()Z
+					ifeq L16;
+				L15:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifeq L17;
+				L16:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L17:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_3;
+					aload_3;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 4;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					sadd;
+					bspush 16;
+					sadd;
+					sstore 5;
+					sload 4;
+					sload 5;
+					bspush 8;
+					sadd;
+					if_scmpeq L19;
+				L18:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L19:	sconst_5;
+					sstore 6;
+					sload 6;
+					sload 5;
+					sadd;
+					sstore 7;
+					aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					ifne L21;
+				L20:	aload_1;
+					invokevirtual 147;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+				L21:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					sconst_2;
+					if_scmpge L23;
+				L22:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L23:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					sconst_2;
+					invokevirtual 165;		// hig/no/SmartIDCrypto.initMac(B)V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sload 6;
+					sload 5;
+					aload_3;
+					sload 7;
+					invokevirtual 166;		// hig/no/SmartIDCrypto.verifyMacFinal([BSS[BS)Z
+					ifne L25;
+				L24:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L25:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					invokevirtual 167;		// hig/no/SmartIDCrypto.decryptInit()V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sload 6;
+					sload 5;
+					aload_3;
+					sconst_0;
+					invokevirtual 168;		// hig/no/SmartIDCrypto.decryptFinal([BSS[BS)S
+					sstore 8;
+					sload 8;
+					sload 5;
+					if_scmpeq L27;
+				L26:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L27:	sconst_0;
+					sstore 9;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					sstore 10;
+					sload 10;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					sadd;
+					sstore 11;
+					sload 11;
+					bspush 16;
+					sadd;
+					sstore 12;
+					sload 12;
+					bspush 16;
+					sadd;
+					sstore 13;
+					sload 13;
+					bspush 16;
+					sadd;
+					sstore 14;
+					aload_3;
+					sload 10;
+					getfield_a_this 41;		// reference hig/no/SmartIDApplet.rnd
+					sconst_0;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					invokestatic 60;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifeq L29;
+				L28:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L29:	getfield_a_this 38;		// reference hig/no/SmartIDApplet.randomData
+					aload_3;
+					sload 12;
+					bspush 16;
+					invokevirtual 160;		// javacard/security/RandomData.generateData([BSS)V
+					aload_3;
+					sload 11;
+					aload_3;
+					sload 12;
+					aload_3;
+					sload 13;
+					bspush 16;
+					invokestatic 169;		// hig/no/SmartIDUtil.xor([BS[BS[BSS)V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sload 13;
+					bspush 16;
+					sconst_2;
+					sload 14;
+					invokevirtual 148;		// hig/no/SmartIDCrypto.deriveKey([BSSBS)V
+					sload 14;
+					sstore 15;
+					sinc 14 16;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sload 13;
+					bspush 16;
+					sconst_1;
+					sload 14;
+					invokevirtual 148;		// hig/no/SmartIDCrypto.deriveKey([BSSBS)V
+					sload 14;
+					sstore 16;
+					sinc 14 16;
+					getfield_a_this 39;		// reference hig/no/SmartIDApplet.keyStore
+					aload_3;
+					sload 15;
+					aload_3;
+					sload 16;
+					invokevirtual 170;		// hig/no/KeyStore.setSecureMessagingKeys([BS[BS)V
+					aload_3;
+					sload 10;
+					aload_3;
+					sload 9;
+					getfield_a_this 42;		// reference hig/no/SmartIDApplet.ssc
+					invokestatic 171;		// hig/no/SmartIDCrypto.computeSSC([BS[BS[B)V
+					aload_3;
+					sload 10;
+					sload 9;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					invokestatic 172;		// hig/no/SmartIDUtil.swap([BSSS)V
+					aload_3;
+					sload 12;
+					aload_3;
+					sconst_2;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					smul;
+					bspush 16;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					invokevirtual 173;		// hig/no/SmartIDCrypto.encryptInit()S
+					pop;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sconst_0;
+					sconst_2;
+					getfield_s_this 49;		// short hig/no/SmartIDApplet.rndLength
+					smul;
+					bspush 16;
+					sadd;
+					aload_3;
+					sconst_0;
+					invokevirtual 174;		// hig/no/SmartIDCrypto.encryptFinal([BSS[BS)S
+					sstore 17;
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					sconst_1;
+					invokevirtual 165;		// hig/no/SmartIDCrypto.initMac(B)V
+					getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					aload_3;
+					sconst_0;
+					sload 17;
+					aload_3;
+					sload 17;
+					invokevirtual 175;		// hig/no/SmartIDCrypto.createMacFinal([BSS[BS)V
+					invokestatic 118;		// hig/no/SmartIDApplet.setNoChallenged()V
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_2;
+					sor;
+					bastore;
+					sload 17;
+					bspush 8;
+					sadd;
+					sreturn;
+		}
+
+		.method private processSelectFile(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 4;
+					sload_3;
+					sconst_2;
+					if_scmpne L2;
+				L1:	sload 4;
+					bspush 12;
+					if_scmpeq L3;
+				L2:	sspush 27270;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L3:	aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					sload 5;
+					sconst_2;
+					if_scmpeq L5;
+				L4:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					ifne L7;
+				L6:	aload_1;
+					invokevirtual 147;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+				L7:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					sconst_2;
+					if_scmpge L9;
+				L8:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	aload_2;
+					sconst_5;
+					invokestatic 73;		// javacard/framework/Util.getShort([BS)S
+					sstore 6;
+					getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					sload 6;
+					invokevirtual 65;		// hig/no/FileSystem.getFile(S)[B
+					ifnull L11;
+				L10:	aload_0;
+					sload 6;
+					putfield_s 50;		// short hig/no/SmartIDApplet.selectedFile
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_4;
+					sor;
+					bastore;
+					return;
+				L11:	invokestatic 177;		// hig/no/SmartIDApplet.setNoFileSelected()V
+					sspush 27266;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method private processReadBinary(Ljavacard/framework/APDU;SZ)S {
+			.stack 5;
+			.locals 8;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	invokestatic 70;		// hig/no/SmartIDApplet.hasMutualAuthenticationKeys()Z
+					ifeq L4;
+				L1:	sload_3;
+					ifeq L3;
+				L2:	invokestatic 90;		// hig/no/SmartIDApplet.hasMutuallyAuthenticated()Z
+					ifne L4;
+				L3:	sspush 27010;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore 4;
+					aload 4;
+					sconst_2;
+					baload;
+					sstore 5;
+					aload 4;
+					sconst_3;
+					baload;
+					sstore 6;
+					sconst_0;
+					sstore 7;
+					sload 5;
+					bspush -128;
+					sand;
+					bspush -128;
+					if_scmpne L11;
+				L5:	sload 5;
+					bspush 127;
+					sand;
+					sstore 8;
+					sload 8;
+					bspush 31;
+					if_scmplt L7;
+				L6:	sspush 27270;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sconst_0;
+					sload 8;
+					invokestatic 178;		// javacard/framework/Util.makeShort(BB)S
+					sstore 9;
+					getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					sload 9;
+					invokevirtual 65;		// hig/no/FileSystem.getFile(S)[B
+					ifnull L9;
+				L8:	aload_0;
+					sload 9;
+					putfield_s 50;		// short hig/no/SmartIDApplet.selectedFile
+					getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_4;
+					sor;
+					bastore;
+					goto L10;
+				L9:	invokestatic 177;		// hig/no/SmartIDApplet.setNoFileSelected()V
+					sspush 27266;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	sload 6;
+					sspush 255;
+					sand;
+					sstore 7;
+					goto L14;
+				L11:	invokestatic 179;		// hig/no/SmartIDApplet.hasFileSelected()Z
+					ifne L13;
+				L12:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	sload 5;
+					sload 6;
+					invokestatic 178;		// javacard/framework/Util.makeShort(BB)S
+					sstore 7;
+				L14:	getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					getfield_s_this 50;		// short hig/no/SmartIDApplet.selectedFile
+					invokevirtual 65;		// hig/no/FileSystem.getFile(S)[B
+					astore 8;
+					aload 8;
+					ifnonnull L16;
+				L15:	sspush 27266;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					getfield_s_this 50;		// short hig/no/SmartIDApplet.selectedFile
+					invokevirtual 66;		// hig/no/FileSystem.getFileSize(S)S
+					sstore 10;
+					aload 4;
+					arraylength;
+					bspush 37;
+					ssub;
+					sload 10;
+					sload 7;
+					ssub;
+					invokestatic 180;		// hig/no/SmartIDUtil.min(SS)S
+					sstore 9;
+					sload 9;
+					aload 4;
+					arraylength;
+					invokestatic 180;		// hig/no/SmartIDUtil.min(SS)S
+					sstore 9;
+					sload_2;
+					sload 9;
+					invokestatic 180;		// hig/no/SmartIDUtil.min(SS)S
+					sstore 9;
+					sconst_0;
+					sstore 11;
+					sload_3;
+					ifeq L18;
+				L17:	getfield_a_this 40;		// reference hig/no/SmartIDApplet.crypto
+					sload 9;
+					invokevirtual 122;		// hig/no/SmartIDCrypto.getApduBufferOffset(S)S
+					sstore 11;
+				L18:	aload 8;
+					sload 7;
+					aload 4;
+					sload 11;
+					sload 9;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 9;
+					sreturn;
+		}
+
+		.method private processUpdateBinary(Ljavacard/framework/APDU;)V {
+			.stack 6;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	invokestatic 179;		// hig/no/SmartIDApplet.hasFileSelected()Z
+					ifeq L2;
+				L1:	invokestatic 69;		// hig/no/SmartIDApplet.isLocked()Z
+					ifeq L3;
+				L2:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L3:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 4;
+					sload_3;
+					sload 4;
+					invokestatic 178;		// javacard/framework/Util.makeShort(BB)S
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 6;
+					aload_1;
+					invokevirtual 147;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore 6;
+					goto L5;
+				L4:	getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					getfield_s_this 50;		// short hig/no/SmartIDApplet.selectedFile
+					sload 5;
+					aload_2;
+					sconst_5;
+					sload 6;
+					invokevirtual 181;		// hig/no/FileSystem.writeData(SS[BSS)V
+					sload 5;
+					sload 6;
+					sadd;
+					sstore 5;
+					aload_1;
+					sconst_5;
+					invokevirtual 182;		// javacard/framework/APDU.receiveBytes(S)S
+					sstore 6;
+				L5:	sload 6;
+					ifgt L4;
+				L6:	return;
+		}
+
+		.method private processCreateFile(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	invokestatic 69;		// hig/no/SmartIDApplet.isLocked()Z
+					ifeq L2;
+				L1:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					ifeq L4;
+				L3:	sconst_1;
+					goto L5;
+				L4:	sconst_0;
+				L5:	sstore 4;
+					aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					ifne L7;
+				L6:	aload_1;
+					invokevirtual 147;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+				L7:	aload_1;
+					invokevirtual 124;		// javacard/framework/APDU.getCurrentState()B
+					sconst_2;
+					if_scmpge L9;
+				L8:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	sload_3;
+					bspush 6;
+					if_scmplt L11;
+				L10:	aload_2;
+					bspush 6;
+					baload;
+					sspush 255;
+					sand;
+					sconst_4;
+					if_scmpge L12;
+				L11:	sspush 26368;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L12:	aload_2;
+					sconst_5;
+					baload;
+					bspush 99;
+					if_scmpeq L14;
+				L13:	sspush 27012;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	aload_2;
+					bspush 7;
+					baload;
+					aload_2;
+					bspush 8;
+					baload;
+					invokestatic 178;		// javacard/framework/Util.makeShort(BB)S
+					sstore 5;
+					aload_2;
+					bspush 9;
+					baload;
+					aload_2;
+					bspush 10;
+					baload;
+					invokestatic 178;		// javacard/framework/Util.makeShort(BB)S
+					sstore 6;
+					getfield_a_this 37;		// reference hig/no/SmartIDApplet.fileSystem
+					sload 6;
+					sload 5;
+					sload 4;
+					invokevirtual 183;		// hig/no/FileSystem.createFile(SSZ)V
+					return;
+		}
+
+		.method static hasActivelyAuthenticated()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					bspush 8;
+					sand;
+					bspush 8;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasInternalAuthenticationKeys()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 10;
+					sand;
+					bspush 10;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasMutualAuthenticationKeys()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					sconst_1;
+					sand;
+					sconst_1;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasEACKey()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 16;
+					sand;
+					bspush 16;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasSicId()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 64;
+					sand;
+					bspush 64;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasEAPCertificate()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					bspush 32;
+					sand;
+					bspush 32;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static setNoFileSelected()V {
+			.stack 4;
+			.locals 0;
+
+				L0:	invokestatic 179;		// hig/no/SmartIDApplet.hasFileSelected()Z
+					ifeq L2;
+				L1:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_4;
+					sxor;
+					bastore;
+				L2:	return;
+		}
+
+		.method static setNoChallenged()V {
+			.stack 4;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					sconst_1;
+					sand;
+					sconst_1;
+					if_scmpne L2;
+				L1:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					dup2;
+					baload;
+					sconst_1;
+					sxor;
+					bastore;
+				L2:	return;
+		}
+
+		.method static hasFileSelected()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					sconst_4;
+					sand;
+					sconst_4;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static isLocked()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_b 146;		// byte hig/no/SmartIDApplet.persistentState
+					sconst_4;
+					sand;
+					sconst_4;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static isChallenged()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					sconst_1;
+					sand;
+					sconst_1;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasMutuallyAuthenticated()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					sconst_2;
+					sand;
+					sconst_2;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasChipAuthenticated()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					bspush 16;
+					sand;
+					bspush 16;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+		.method static hasTerminalAuthenticated()Z {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 71;		// reference hig/no/SmartIDApplet.volatileState
+					sconst_0;
+					baload;
+					bspush 32;
+					sand;
+					bspush 32;
+					if_scmpne L2;
+				L1:	sconst_1;
+					sreturn;
+				L2:	sconst_0;
+					sreturn;
+		}
+
+	}
+
+	.class public SmartIDCrypto 5 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private KeyStore keyStore 0;		// Lhig/no/KeyStore;
+			private 1.15 sig 1;		// Ljavacard/security/Signature;
+			private 1.15 rsaSig 2;		// Ljavacard/security/Signature;
+			private 3.1 ciph 3;		// Ljavacardx/crypto/Cipher;
+			private 1.22 keyAgreement 4;		// Ljavacard/security/KeyAgreement;
+			private boolean[] eacChangeKeys 5;		// [Z
+			 1.11 shaDigest 6;		// Ljavacard/security/MessageDigest;
+			 3.1 rsaCiph 7;		// Ljavacardx/crypto/Cipher;
+			static final byte ENC_MODE = 1;		// B
+			static final byte MAC_MODE = 2;		// B
+			private static final byte PAD_INPUT = 7;		// B
+			private static final byte DONT_PAD_INPUT = 8;		// B
+			private static byte[] PAD_DATA = {-128,0,0,0,0,0,0,0};		// [B
+			private static byte[] c = {0,0,0,0};		// [B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			authenticateChip([BSS)Z;
+		}
+
+		.packageMethodTable 0 {
+			eapVerifySignature(Ljavacard/security/RSAPublicKey;[BS[B[BSS)Z;
+			createMacFinal([BSS[BS)V;
+			verifyMacFinal([BSS[BS)Z;
+			decryptInit()V;
+			decrypt([BSS[BS)S;
+			decryptFinal([BSS[BS)S;
+			encryptInit()S;
+			encryptInit(B[BSS)S;
+			encrypt([BSS[BS)S;
+			encryptFinal([BSS[BS)S;
+			updateMac([BSS)V;
+			initMac(B)V;
+			unwrapCommandAPDU([BLjavacard/framework/APDU;)S;
+			getApduBufferOffset(S)S;
+			wrapResponseAPDU([BLjavacard/framework/APDU;SSS)S;
+			deriveKey([BSSBS)V;
+			createHash([BSS[BS)V;
+		}
+
+		.method  <init>(Lhig/no/KeyStore;)V {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 78;		// java/lang/Object.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 51;		// reference hig/no/SmartIDCrypto.keyStore
+					aload_0;
+					bspush 20;
+					sconst_0;
+					invokestatic 151;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+					putfield_a 52;		// reference hig/no/SmartIDCrypto.sig
+					aload_0;
+					sconst_1;
+					sconst_0;
+					invokestatic 186;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 53;		// reference hig/no/SmartIDCrypto.ciph
+					aload_0;
+					sconst_1;
+					sconst_0;
+					invokestatic 188;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					putfield_a 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					aload_0;
+					bspush 10;
+					sconst_0;
+					invokestatic 151;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+					putfield_a 54;		// reference hig/no/SmartIDCrypto.rsaSig
+					aload_0;
+					bspush 12;
+					sconst_0;
+					invokestatic 186;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 48;		// reference hig/no/SmartIDCrypto.rsaCiph
+					aload_0;
+					sconst_1;
+					sconst_0;
+					invokestatic 190;		// javacard/security/KeyAgreement.getInstance(BZ)Ljavacard/security/KeyAgreement;
+					putfield_a 55;		// reference hig/no/SmartIDCrypto.keyAgreement
+					aload_0;
+					sconst_1;
+					sconst_2;
+					invokestatic 192;		// javacard/framework/JCSystem.makeTransientBooleanArray(SB)[Z
+					putfield_a 56;		// reference hig/no/SmartIDCrypto.eacChangeKeys
+					return;
+		}
+
+		.method  eapVerifySignature(Ljavacard/security/RSAPublicKey;[BS[B[BSS)Z 128 {
+			.stack 7;
+			.locals 0;
+
+			.descriptor	Ljavacard/security/RSAPublicKey;	1.9;
+
+				L0:	getfield_a_this 54;		// reference hig/no/SmartIDCrypto.rsaSig
+					aload_1;
+					sconst_2;
+					invokevirtual 96;		// javacard/security/Signature.init(Ljavacard/security/Key;B)V
+					getfield_a_this 54;		// reference hig/no/SmartIDCrypto.rsaSig
+					aload 4;
+					sconst_0;
+					aload 4;
+					arraylength;
+					invokevirtual 101;		// javacard/security/Signature.update([BSS)V
+					getfield_a_this 54;		// reference hig/no/SmartIDCrypto.rsaSig
+					aload_2;
+					sconst_0;
+					sload_3;
+					aload 5;
+					sload 6;
+					sload 7;
+					invokevirtual 104;		// javacard/security/Signature.verify([BSS[BSS)Z
+					sreturn;
+		}
+
+		.method  createMacFinal([BSS[BS)V 129 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 52;		// reference hig/no/SmartIDCrypto.sig
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 194;		// javacard/security/Signature.sign([BSS[BS)S
+					pop;
+					return;
+		}
+
+		.method  verifyMacFinal([BSS[BS)Z 130 {
+			.stack 7;
+			.locals 0;
+
+				L0:	getfield_a_this 52;		// reference hig/no/SmartIDCrypto.sig
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					bspush 8;
+					invokevirtual 104;		// javacard/security/Signature.verify([BSS[BSS)Z
+					sreturn;
+		}
+
+		.method  decryptInit()V 131 {
+			.stack 3;
+			.locals 0;
+
+				L0:	getfield_a_this 53;		// reference hig/no/SmartIDCrypto.ciph
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					invokevirtual 195;		// hig/no/KeyStore.getCryptKey()Ljavacard/security/DESKey;
+					sconst_1;
+					invokevirtual 157;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					return;
+		}
+
+		.method  decrypt([BSS[BS)S 132 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 53;		// reference hig/no/SmartIDCrypto.ciph
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 196;		// javacardx/crypto/Cipher.update([BSS[BS)S
+					sreturn;
+		}
+
+		.method  decryptFinal([BSS[BS)S 133 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 53;		// reference hig/no/SmartIDCrypto.ciph
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 158;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					sreturn;
+		}
+
+		.method  encryptInit()S 134 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					bspush 8;
+					aconst_null;
+					sconst_0;
+					sconst_0;
+					invokevirtual 197;		// hig/no/SmartIDCrypto.encryptInit(B[BSS)S
+					sreturn;
+		}
+
+		.method  encryptInit(B[BSS)S 135 {
+			.stack 3;
+			.locals 1;
+
+				L0:	sload 4;
+					sstore 5;
+					sload_1;
+					bspush 7;
+					if_scmpne L2;
+				L1:	aload_2;
+					sload_3;
+					sload 4;
+					invokestatic 198;		// hig/no/SmartIDUtil.pad([BSS)S
+					sstore 5;
+				L2:	getfield_a_this 53;		// reference hig/no/SmartIDCrypto.ciph
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					invokevirtual 195;		// hig/no/KeyStore.getCryptKey()Ljavacard/security/DESKey;
+					sconst_2;
+					invokevirtual 157;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					sload 5;
+					sreturn;
+		}
+
+		.method  encrypt([BSS[BS)S 136 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 53;		// reference hig/no/SmartIDCrypto.ciph
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 196;		// javacardx/crypto/Cipher.update([BSS[BS)S
+					sreturn;
+		}
+
+		.method  encryptFinal([BSS[BS)S 137 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 53;		// reference hig/no/SmartIDCrypto.ciph
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 158;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					sreturn;
+		}
+
+		.method  updateMac([BSS)V 138 {
+			.stack 4;
+			.locals 0;
+
+				L0:	getfield_a_this 52;		// reference hig/no/SmartIDCrypto.sig
+					aload_1;
+					sload_2;
+					sload_3;
+					invokevirtual 101;		// javacard/security/Signature.update([BSS)V
+					return;
+		}
+
+		.method  initMac(B)V 139 {
+			.stack 3;
+			.locals 0;
+
+				L0:	getfield_a_this 52;		// reference hig/no/SmartIDCrypto.sig
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					invokevirtual 199;		// hig/no/KeyStore.getMacKey()Ljavacard/security/DESKey;
+					sload_1;
+					invokevirtual 96;		// javacard/security/Signature.init(Ljavacard/security/Key;B)V
+					return;
+		}
+
+		.method  unwrapCommandAPDU([BLjavacard/framework/APDU;)S 140 {
+			.stack 7;
+			.locals 10;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_2;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore_3;
+					sconst_5;
+					sstore 4;
+					sload 4;
+					sstore 5;
+					sconst_0;
+					sstore 6;
+					sconst_0;
+					sstore 7;
+					sconst_0;
+					sstore 8;
+					sconst_0;
+					sstore 9;
+					sconst_4;
+					sstore 10;
+					bspush 8;
+					sload 10;
+					ssub;
+					sstore 11;
+					aload_2;
+					invokevirtual 147;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+					aload_1;
+					invokestatic 200;		// hig/no/SmartIDCrypto.incrementSSC([B)V
+					aload_3;
+					sload 4;
+					baload;
+					bspush -121;
+					if_scmpne L12;
+				L1:	sinc 4 1;
+					aload_3;
+					sload 4;
+					baload;
+					sspush 255;
+					sand;
+					sspush 128;
+					if_scmple L3;
+				L2:	aload_3;
+					sload 4;
+					baload;
+					bspush 127;
+					sand;
+					sstore 9;
+					sinc 4 1;
+					goto L4;
+				L3:	sconst_1;
+					sstore 9;
+				L4:	sload 9;
+					sconst_2;
+					if_scmple L6;
+				L5:	sspush 27016;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	sconst_0;
+					sstore 12;
+					goto L8;
+				L7:	sload 7;
+					aload_3;
+					sload 4;
+					sload 12;
+					sadd;
+					baload;
+					sspush 255;
+					sand;
+					sload 9;
+					sconst_1;
+					ssub;
+					sload 12;
+					ssub;
+					bspush 8;
+					smul;
+					sshl;
+					sadd;
+					sstore 7;
+					sinc 12 1;
+				L8:	sload 12;
+					sload 9;
+					if_scmplt L7;
+				L9:	sload 4;
+					sload 9;
+					sadd;
+					sstore 4;
+					aload_3;
+					sload 4;
+					baload;
+					sconst_1;
+					if_scmpeq L11;
+				L10:	sspush 27016;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	sload 4;
+					sconst_1;
+					sadd;
+					sstore 8;
+					sload 4;
+					sload 7;
+					sadd;
+					sstore 4;
+					sinc 7 -1;
+				L12:	aload_3;
+					sload 4;
+					baload;
+					bspush -105;
+					if_scmpne L16;
+				L13:	aload_3;
+					sload 4;
+					sconst_1;
+					sadd;
+					dup;
+					sstore 4;
+					baload;
+					sconst_1;
+					if_scmpeq L15;
+				L14:	sspush 27016;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	aload_3;
+					sload 4;
+					sconst_1;
+					sadd;
+					dup;
+					sstore 4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 6;
+					sinc 4 1;
+				L16:	aload_3;
+					sload 4;
+					baload;
+					bspush -114;
+					if_scmpeq L18;
+				L17:	sspush 27015;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	aload_3;
+					sload 4;
+					sconst_1;
+					sadd;
+					dup;
+					sstore 4;
+					baload;
+					bspush 8;
+					if_scmpeq L20;
+				L19:	sspush 27016;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L20:	aload_0;
+					sconst_2;
+					invokevirtual 165;		// hig/no/SmartIDCrypto.initMac(B)V
+					aload_0;
+					aload_1;
+					sconst_0;
+					aload_1;
+					arraylength;
+					invokevirtual 201;		// hig/no/SmartIDCrypto.updateMac([BSS)V
+					aload_0;
+					aload_3;
+					sconst_0;
+					sload 10;
+					invokevirtual 201;		// hig/no/SmartIDCrypto.updateMac([BSS)V
+					aload_0;
+					getstatic_a 202;		// reference hig/no/SmartIDCrypto.PAD_DATA
+					sconst_0;
+					sload 11;
+					invokevirtual 201;		// hig/no/SmartIDCrypto.updateMac([BSS)V
+					aload_0;
+					aload_3;
+					sload 5;
+					sload 4;
+					sconst_1;
+					ssub;
+					sload 5;
+					ssub;
+					aload_3;
+					sload 4;
+					sconst_1;
+					sadd;
+					invokevirtual 166;		// hig/no/SmartIDCrypto.verifyMacFinal([BSS[BS)Z
+					ifne L22;
+				L21:	sspush 27013;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L22:	sconst_0;
+					sstore 12;
+					sload 7;
+					ifeq L24;
+				L23:	aload_0;
+					invokevirtual 167;		// hig/no/SmartIDCrypto.decryptInit()V
+					aload_0;
+					aload_3;
+					sload 8;
+					sload 7;
+					aload_3;
+					sload 10;
+					sconst_1;
+					sadd;
+					invokevirtual 168;		// hig/no/SmartIDCrypto.decryptFinal([BSS[BS)S
+					pop;
+					aload_3;
+					sload 10;
+					sconst_1;
+					sadd;
+					sload 7;
+					invokestatic 203;		// hig/no/SmartIDUtil.calcLcFromPaddedData([BSS)B
+					sstore 12;
+					aload_3;
+					sload 10;
+					sload 12;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+				L24:	sload 6;
+					sreturn;
+		}
+
+		.method  getApduBufferOffset(S)S 141 {
+			.stack 3;
+			.locals 2;
+
+				L0:	sconst_2;
+					sstore_2;
+					sload_1;
+					bspush 8;
+					sadd;
+					bspush 8;
+					sdiv;
+					bspush 8;
+					smul;
+					sconst_1;
+					sadd;
+					sstore_3;
+					sload_3;
+					sspush 128;
+					if_scmpge L2;
+				L1:	sinc 2 1;
+					goto L8;
+				L2:	sload_3;
+					sspush 255;
+					if_scmpgt L4;
+				L3:	sinc 2 2;
+					goto L8;
+				L4:	sload_2;
+					sload_1;
+					sspush 255;
+					if_scmple L6;
+				L5:	sconst_2;
+					goto L7;
+				L6:	sconst_1;
+				L7:	sadd;
+					sstore_2;
+				L8:	sload_2;
+					sreturn;
+		}
+
+		.method  wrapResponseAPDU([BLjavacard/framework/APDU;SSS)S 142 {
+			.stack 7;
+			.locals 10;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_2;
+					invokevirtual 114;		// javacard/framework/APDU.getBuffer()[B
+					astore 6;
+					sconst_0;
+					sstore 7;
+					sload 4;
+					invokestatic 204;		// hig/no/SmartIDUtil.lengthWithPadding(S)S
+					sstore 8;
+					sinc 8 1;
+					sload 8;
+					sspush 255;
+					if_scmple L2;
+				L1:	sconst_2;
+					goto L3;
+				L2:	sconst_1;
+				L3:	sstore 9;
+					aload_0;
+					sload 4;
+					invokevirtual 122;		// hig/no/SmartIDCrypto.getApduBufferOffset(S)S
+					sstore 10;
+					sload 10;
+					sload 8;
+					sadd;
+					sconst_1;
+					ssub;
+					sstore 11;
+					sload 4;
+					ifle L5;
+				L4:	sconst_1;
+					goto L6;
+				L5:	sconst_0;
+				L6:	sstore 12;
+					aload_1;
+					invokestatic 200;		// hig/no/SmartIDCrypto.incrementSSC([B)V
+					sconst_0;
+					sstore 13;
+					sconst_0;
+					sstore 14;
+					sload 12;
+					ifeq L8;
+				L7:	aload_0;
+					bspush 7;
+					aload 6;
+					sload_3;
+					sload 4;
+					invokevirtual 197;		// hig/no/SmartIDCrypto.encryptInit(B[BSS)S
+					sstore 14;
+					aload_0;
+					aload 6;
+					sload_3;
+					sload 14;
+					aload 6;
+					sload 10;
+					invokevirtual 174;		// hig/no/SmartIDCrypto.encryptFinal([BSS[BS)S
+					sstore 13;
+				L8:	sload 12;
+					ifeq L11;
+				L9:	sload 8;
+					sconst_1;
+					ssub;
+					sload 13;
+					if_scmpeq L11;
+				L10:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	sload 12;
+					ifeq L18;
+				L12:	aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					bspush -121;
+					bastore;
+					sload 8;
+					sspush 128;
+					if_scmpge L14;
+				L13:	aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sload 8;
+					s2b;
+					bastore;
+					goto L17;
+				L14:	aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sspush 128;
+					sload 9;
+					sadd;
+					s2b;
+					bastore;
+					sload 9;
+					sconst_1;
+					ssub;
+					sstore 15;
+					goto L16;
+				L15:	aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sload 8;
+					sload 15;
+					bspush 8;
+					smul;
+					sushr;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sinc 15 -1;
+				L16:	sload 15;
+					ifge L15;
+				L17:	aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sconst_1;
+					bastore;
+				L18:	sload 12;
+					ifeq L20;
+				L19:	sload 11;
+					sstore 7;
+				L20:	aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					bspush -103;
+					bastore;
+					aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sconst_2;
+					bastore;
+					aload 6;
+					sload 7;
+					sload 5;
+					invokestatic 205;		// javacard/framework/Util.setShort([BSS)S
+					pop;
+					sinc 7 2;
+					aload_0;
+					sconst_1;
+					invokevirtual 165;		// hig/no/SmartIDCrypto.initMac(B)V
+					aload_0;
+					aload_1;
+					sconst_0;
+					aload_1;
+					arraylength;
+					invokevirtual 201;		// hig/no/SmartIDCrypto.updateMac([BSS)V
+					aload_0;
+					aload 6;
+					sconst_0;
+					sload 7;
+					aload 6;
+					sload 7;
+					sconst_2;
+					sadd;
+					invokevirtual 175;		// hig/no/SmartIDCrypto.createMacFinal([BSS[BS)V
+					aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					bspush -114;
+					bastore;
+					aload 6;
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					bspush 8;
+					bastore;
+					sinc 7 8;
+					getfield_a_this 56;		// reference hig/no/SmartIDCrypto.eacChangeKeys
+					sconst_0;
+					baload;
+					ifeq L22;
+				L21:	getfield_a_this 56;		// reference hig/no/SmartIDCrypto.eacChangeKeys
+					sconst_0;
+					sconst_0;
+					bastore;
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 36;		// reference hig/no/KeyStore.tmpKeys
+					sconst_0;
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 36;		// reference hig/no/KeyStore.tmpKeys
+					bspush 16;
+					invokevirtual 170;		// hig/no/KeyStore.setSecureMessagingKeys([BS[BS)V
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 36;		// reference hig/no/KeyStore.tmpKeys
+					sconst_0;
+					bspush 32;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					aload_1;
+					sconst_0;
+					aload_1;
+					arraylength;
+					sconst_0;
+					invokestatic 94;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+				L22:	sload 7;
+					sreturn;
+		}
+
+		.method  deriveKey([BSSBS)V 143 {
+			.stack 6;
+			.locals 1;
+
+				L0:	aload_1;
+					arraylength;
+					sload 5;
+					sload_3;
+					sadd;
+					getstatic_a 206;		// reference hig/no/SmartIDCrypto.c
+					arraylength;
+					sadd;
+					if_scmpge L2;
+				L1:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload_2;
+					sload 5;
+					if_scmple L4;
+				L3:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getstatic_a 206;		// reference hig/no/SmartIDCrypto.c
+					getstatic_a 206;		// reference hig/no/SmartIDCrypto.c
+					arraylength;
+					sconst_1;
+					ssub;
+					sload 4;
+					bastore;
+					aload_1;
+					sload_2;
+					aload_1;
+					sload 5;
+					sload_3;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getstatic_a 206;		// reference hig/no/SmartIDCrypto.c
+					sconst_0;
+					aload_1;
+					sload 5;
+					sload_3;
+					sadd;
+					getstatic_a 206;		// reference hig/no/SmartIDCrypto.c
+					arraylength;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					aload_1;
+					sload 5;
+					sload_3;
+					getstatic_a 206;		// reference hig/no/SmartIDCrypto.c
+					arraylength;
+					sadd;
+					aload_1;
+					sload 5;
+					invokevirtual 154;		// javacard/security/MessageDigest.doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					invokevirtual 155;		// javacard/security/MessageDigest.reset()V
+					sload 5;
+					sstore 6;
+					goto L8;
+				L5:	aload_1;
+					sload 6;
+					baload;
+					invokestatic 207;		// hig/no/SmartIDUtil.evenBits(B)B
+					ifne L7;
+				L6:	aload_1;
+					sload 6;
+					aload_1;
+					sload 6;
+					baload;
+					sconst_1;
+					sxor;
+					bastore;
+				L7:	sinc 6 1;
+				L8:	sload 6;
+					sload 5;
+					bspush 16;
+					sadd;
+					if_scmplt L5;
+				L9:	return;
+		}
+
+		.method private static incrementSSC([B)V {
+			.stack 4;
+			.locals 1;
+
+				L0:	aload_0;
+					ifnull L2;
+				L1:	aload_0;
+					arraylength;
+					ifgt L3;
+				L2:	return;
+				L3:	aload_0;
+					arraylength;
+					sconst_1;
+					ssub;
+					sstore_1;
+					goto L8;
+				L4:	aload_0;
+					sload_1;
+					baload;
+					sspush 255;
+					sand;
+					sconst_1;
+					sadd;
+					sspush 255;
+					if_scmple L6;
+				L5:	aload_0;
+					sload_1;
+					sconst_0;
+					bastore;
+					goto L7;
+				L6:	aload_0;
+					sload_1;
+					dup2;
+					baload;
+					sconst_1;
+					sadd;
+					s2b;
+					bastore;
+					goto L9;
+				L7:	sinc 1 -1;
+				L8:	sload_1;
+					ifge L4;
+				L9:	return;
+		}
+
+		.method static computeSSC([BS[BS[B)V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					ifnull L4;
+				L1:	aload_0;
+					arraylength;
+					sload_1;
+					ssub;
+					bspush 8;
+					if_scmplt L4;
+				L2:	aload_2;
+					ifnull L4;
+				L3:	aload_2;
+					arraylength;
+					sload_3;
+					ssub;
+					bspush 8;
+					if_scmpge L5;
+				L4:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	aload_0;
+					sload_1;
+					sconst_4;
+					sadd;
+					aload 4;
+					sconst_0;
+					sconst_4;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_2;
+					sload_3;
+					sconst_4;
+					sadd;
+					aload 4;
+					sconst_4;
+					sconst_4;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method  createHash([BSS[BS)V 144 {
+			.stack 6;
+			.locals 1;
+
+				L0:	aload 4;
+					arraylength;
+					sload 5;
+					sload_3;
+					sadd;
+					if_scmplt L2;
+				L1:	aload_1;
+					arraylength;
+					sload_2;
+					sload_3;
+					sadd;
+					if_scmpge L3;
+				L2:	sspush 28006;
+					invokestatic 187;		// javacard/framework/ISOException.throwIt(S)V
+				L3:	getfield_a_this 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 154;		// javacard/security/MessageDigest.doFinal([BSS[BS)S
+					pop;
+					goto L5;
+				L4:	astore 6;
+					getfield_a_this 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					invokevirtual 155;		// javacard/security/MessageDigest.reset()V
+					aload 6;
+					athrow;
+				L5:	getfield_a_this 47;		// reference hig/no/SmartIDCrypto.shaDigest
+					invokevirtual 155;		// javacard/security/MessageDigest.reset()V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L4 0;
+			}
+		}
+
+		.method public authenticateChip([BSS)Z 1 {
+			.stack 6;
+			.locals 5;
+
+				L0:	getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					aload_1;
+					sload_2;
+					sload_3;
+					invokeinterface 4 87 18;		// javacard/security/ECPublicKey
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 35;		// reference hig/no/KeyStore.ecPublicKey
+					invokeinterface 1 87 3;		// javacard/security/ECPublicKey
+					ifne L2;
+				L1:	sconst_1;
+					invokestatic 208;		// javacard/security/CryptoException.throwIt(S)V
+				L2:	getfield_a_this 55;		// reference hig/no/SmartIDCrypto.keyAgreement
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 34;		// reference hig/no/KeyStore.ecPrivateKey
+					invokevirtual 209;		// javacard/security/KeyAgreement.init(Ljavacard/security/PrivateKey;)V
+					sload_2;
+					sload_3;
+					sadd;
+					sstore 4;
+					getfield_a_this 55;		// reference hig/no/SmartIDCrypto.keyAgreement
+					aload_1;
+					sload_2;
+					sload_3;
+					aload_1;
+					sload 4;
+					invokevirtual 210;		// javacard/security/KeyAgreement.generateSecret([BSS[BS)S
+					sstore 5;
+					sload 4;
+					sload 5;
+					sadd;
+					sstore 6;
+					aload_0;
+					aload_1;
+					sload 4;
+					sload 5;
+					sconst_2;
+					sload 6;
+					invokevirtual 148;		// hig/no/SmartIDCrypto.deriveKey([BSSBS)V
+					sload 6;
+					sstore 7;
+					sinc 6 16;
+					aload_0;
+					aload_1;
+					sload 4;
+					sload 5;
+					sconst_1;
+					sload 6;
+					invokevirtual 148;		// hig/no/SmartIDCrypto.deriveKey([BSSBS)V
+					sload 6;
+					sstore 8;
+					aload_1;
+					sload 7;
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 36;		// reference hig/no/KeyStore.tmpKeys
+					sconst_0;
+					bspush 16;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sload 8;
+					getfield_a_this 51;		// reference hig/no/SmartIDCrypto.keyStore
+					getfield_a 36;		// reference hig/no/KeyStore.tmpKeys
+					bspush 16;
+					bspush 16;
+					invokestatic 88;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 56;		// reference hig/no/SmartIDCrypto.eacChangeKeys
+					sconst_0;
+					sconst_1;
+					bastore;
+				L3:	sconst_1;
+					sreturn;
+				L4:	astore 4;
+					getfield_a_this 56;		// reference hig/no/SmartIDCrypto.eacChangeKeys
+					sconst_0;
+					sconst_0;
+					bastore;
+					sconst_0;
+					sreturn;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L0 L3 L4 184;
+			}
+		}
+
+	}
+
+	.class public SmartIDUtil 6 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 2.0 { 		// javacard/framework/ISO7816
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 78;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method static evenBits(B)B {
+			.stack 3;
+			.locals 2;
+
+				L0:	sconst_0;
+					sstore_1;
+					sconst_0;
+					sstore_2;
+					goto L2;
+				L1:	sload_1;
+					sload_0;
+					sload_2;
+					sushr;
+					sconst_1;
+					sand;
+					sadd;
+					sstore_1;
+					sinc 2 1;
+				L2:	sload_2;
+					bspush 8;
+					if_scmplt L1;
+				L3:	sload_1;
+					sconst_2;
+					srem;
+					sreturn;
+		}
+
+		.method static xor([BS[BS[BSS)V {
+			.stack 6;
+			.locals 1;
+
+				L0:	sconst_0;
+					sstore 7;
+					goto L2;
+				L1:	aload 4;
+					sload 5;
+					sload 7;
+					sadd;
+					aload_0;
+					sload_1;
+					sload 7;
+					sadd;
+					baload;
+					aload_2;
+					sload_3;
+					sload 7;
+					sadd;
+					baload;
+					sxor;
+					bastore;
+					sinc 7 1;
+				L2:	sload 7;
+					sload 6;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+		.method static swap([BSSS)V {
+			.stack 3;
+			.locals 3;
+
+				L0:	sconst_0;
+					sstore 6;
+					goto L2;
+				L1:	aload_0;
+					sload_1;
+					sload 6;
+					sadd;
+					baload;
+					sstore 4;
+					aload_0;
+					sload_2;
+					sload 6;
+					sadd;
+					baload;
+					sstore 5;
+					aload_0;
+					sload_1;
+					sload 6;
+					sadd;
+					sload 5;
+					bastore;
+					aload_0;
+					sload_2;
+					sload 6;
+					sadd;
+					sload 4;
+					bastore;
+					sinc 6 1;
+				L2:	sload 6;
+					sload_3;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+		.method static sign(S)S {
+			.stack 2;
+			.locals 0;
+
+				L0:	sload_0;
+					bspush 15;
+					sushr;
+					sconst_1;
+					sand;
+					s2b;
+					sreturn;
+		}
+
+		.method static min(SS)S {
+			.stack 2;
+			.locals 0;
+
+				L0:	sload_0;
+					invokestatic 211;		// hig/no/SmartIDUtil.sign(S)S
+					sload_1;
+					invokestatic 211;		// hig/no/SmartIDUtil.sign(S)S
+					if_scmpne L5;
+				L1:	sload_0;
+					sload_1;
+					if_scmpge L3;
+				L2:	sload_0;
+					goto L4;
+				L3:	sload_1;
+				L4:	sreturn;
+				L5:	sload_0;
+					invokestatic 211;		// hig/no/SmartIDUtil.sign(S)S
+					sconst_1;
+					if_scmpne L7;
+				L6:	sload_1;
+					sreturn;
+				L7:	sload_0;
+					sreturn;
+		}
+
+		.method static pad([BSS)S {
+			.stack 3;
+			.locals 2;
+
+				L0:	sload_2;
+					invokestatic 204;		// hig/no/SmartIDUtil.lengthWithPadding(S)S
+					sload_2;
+					ssub;
+					sstore_3;
+					sconst_0;
+					sstore 4;
+					goto L5;
+				L1:	aload_0;
+					sload_1;
+					sload_2;
+					sadd;
+					sload 4;
+					sadd;
+					sload 4;
+					ifne L3;
+				L2:	bspush -128;
+					goto L4;
+				L3:	sconst_0;
+				L4:	bastore;
+					sinc 4 1;
+				L5:	sload 4;
+					sload_3;
+					if_scmplt L1;
+				L6:	sload_2;
+					sload_3;
+					sadd;
+					sreturn;
+		}
+
+		.method static lengthWithPadding(S)S {
+			.stack 2;
+			.locals 0;
+
+				L0:	sload_0;
+					bspush 8;
+					sadd;
+					bspush 8;
+					sdiv;
+					bspush 8;
+					smul;
+					sreturn;
+		}
+
+		.method static calcLcFromPaddedData([BSS)B {
+			.stack 3;
+			.locals 1;
+
+				L0:	sload_2;
+					sconst_1;
+					ssub;
+					sstore_3;
+					goto L6;
+				L1:	aload_0;
+					sload_1;
+					sload_3;
+					sadd;
+					baload;
+					ifeq L5;
+				L2:	aload_0;
+					sload_1;
+					sload_3;
+					sadd;
+					baload;
+					sspush 255;
+					sand;
+					sspush 128;
+					if_scmpeq L4;
+				L3:	sload_2;
+					sspush 255;
+					sand;
+					s2b;
+					sreturn;
+				L4:	sload_3;
+					sspush 255;
+					sand;
+					s2b;
+					sreturn;
+				L5:	sinc 3 -1;
+				L6:	sload_3;
+					ifge L1;
+				L7:	sconst_0;
+					sreturn;
+		}
+
+	}
+
+}

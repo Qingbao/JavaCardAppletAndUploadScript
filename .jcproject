@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Java Card project properties</comment>
+<entry key="hig.no">0x20:0x14:0x06:0x01:0x00:0x01</entry>
+<entry key="hig.no.SmartIDApplet">0x20:0x14:0x06:0x01:0x00:0x00:0x01</entry>
+</properties>
